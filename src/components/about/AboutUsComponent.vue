@@ -1,10 +1,9 @@
 <template>
-  <div space-y>
+  <div class="space-y-12">
     <about-header-section />
     <about-us-section />
     <mission-section />
     <our-commitment-section />
-
   </div>
 </template>
 
@@ -14,7 +13,6 @@ import AboutUsSection from '../home/AboutUsSection.vue';
 import MissionSection from './MissionSection.vue';
 import OurCommitmentSection from './OurCommitmentSection.vue';
 
-
 export default {
   components: {
     AboutHeaderSection,
@@ -22,13 +20,12 @@ export default {
     MissionSection,
     OurCommitmentSection,
   },
-    created() {
-    console.log('AboutUsComponent.vue created');
+  created() {
+    console.log('MainComponent.vue created');
   },
   mounted() {
-    console.log('AboutUsComponent.vue mounted');
+    console.log('MainComponent.vue mounted');
   },
-  
 };
 </script>
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full h-auto rounded mt-[900px] md:mt-32 lg:mt-18 py-24 bg-white px-12 md:px-36">
+  <div class="w-full h-auto rounded mt-[70px] md:mt-32 lg:mt-18 py-24 bg-white px-12 md:px-36">
     <div class="relative -left-10">
       <div class="absolute w-[3] h-[150px] -top-24">
-        <img src="@/assets/Question-Mark.png" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
+        <img v-lazy="require('@/assets/Question-Mark.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
       </div>
     </div>
 
@@ -14,7 +14,7 @@
     <div v-for="(faq, index) in faqs" :key="index" class="w-full my-2 md:my-8">
       <div @click="toggleFaq(index)" class="w-full h-[65px] mb-6 px-4 md:px-8 flex justify-between items-center rounded bg-foundationGreyLight cursor-pointer">
         <p class="text-[14px] md:text-[16px] font-semibold text-foundationGreyDarker text-left">{{ faq.question }}</p>
-        <img :src="faq.icon" :class="{'rotate-90': faq.open, 'rotate-0': !faq.open}" class="h-8 transition-transform duration-200">
+        <img v-lazy="faq.icon" :class="{'rotate-90': faq.open, 'rotate-0': !faq.open}" class="h-8 transition-transform duration-200">
       </div>
       <div v-if="faq.open" class="w-full rounded px-4 md:px-8 py-4 bg-fountActive">
         <p class="text-[14px] md:text-[16px] text-left font-semibold mb-8">{{ faq.answer }}</p>

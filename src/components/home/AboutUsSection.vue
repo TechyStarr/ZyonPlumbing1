@@ -1,13 +1,13 @@
 <template>
   <div class="w-full px-4 md:py-12">
-    <div class="flex flex-col md:flex-row justify-between px-4 md:px-0 lg:px-24 relative">
-      <div class="relative left- justify-star -left-10 md:left-16 lg:left-0 flex justify-center lg:justify-start">
-        <div class="absolute w-[221px] md:w-[280px] lg:w-[411px] h-[200px] md:h-[244px] lg:h-[284px] pt-16">
-          <img src="@/assets/header-img.png" alt="Header Image" class="w-full h-full rounded-[10px] object-cover">
+    <div class="flex flex-col md:flex-row justify-between px- md:px-0 lg:px-24 relative">
+      <div class="relative left- justify-star -left-16 md:left-16 lg:left-0 flex justify-center lg:justify-start">
+        <div class="absolute w-[221px md:w-[280px] lg:w-[411px] h-[200px] md:h-[244px] lg:h-[284px] pt-6 md:pt-16">
+          <img v-lazy="require('@/assets/Frame-17.png')" alt="Header Image" class="w-full h-full rounded-[10px] object-cover">
         </div>
-        <div class="relative w-[176px] md:w-[200px] lg:w-[297px] h-[233px] md:h-[337px] lg:h-[477px] bg-0 border-[15px] border-foundationGoldNormal rounded-[10px] left-16 md:left-28 lg:left-40 top-28 md:top-36 lg:top-40"></div>
-        <div class="absolute rounded-[10px] top-[132px] md:top-[180px] lg:top-48 left-[210px] md:left-[150px] lg:left-48 w-[199px] md:w-[220px] lg:w-[331px] h-[261px] md:h-[344px] lg:h-[477px]">
-          <img src="@/assets/image3.png" alt="Overlay Image" class="w-full h-full object-cover rounded-[10px]">
+        <div class="relative w-[220px] md:w-[200px] lg:w-[297px] h-[280px] md:h-[337px] lg:h-[477px] bg-0 border-[15px] border-foundationGoldNormal rounded-[10px] left-28 md:left-28 lg:left-40 top-20 md:top-36 lg:top-40"></div>
+        <div class="absolute rounded-[10px] top-[132px] md:top-[180px] lg:top-48 left-[225px] md:left-[150px] lg:left-48 w-[220px] md:w-[220px] lg:w-[331px] h-[280px] md:h-[344px] lg:h-[477px]">
+          <img v-lazy="require('@/assets/image3.png')" alt="Overlay Image" class="w-full h-full object-cover rounded-[10px]">
         </div>
       </div>
 
@@ -28,19 +28,19 @@
         </div>
         <div class="grid grid-cols-2 md:grid-cols-2 gap-4 font-nunito">
           <div class="flex items-center space-x-2">
-            <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+            <img v-lazy="require('@/assets/check-square.png')" alt="Check square" class="h-6">
             <p>Qualified Team</p>
           </div>
           <div class="flex items-center space-x-2">
-            <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+            <img v-lazy="require('@/assets/check-square.png')" alt="Check square" class="h-6">
             <p>Affordable Pricing</p>
           </div>
           <div class="flex items-center space-x-2">
-            <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+            <img v-lazy="require('@/assets/check-square.png')" alt="Check square" class="h-6">
             <p>Plumbing Experts</p>
           </div>
           <div class="flex items-center space-x-2">
-            <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+            <img v-lazy="require('@/assets/check-square.png')" alt="Check square" class="h-6">
             <p>Quick Service</p>
           </div>
           <div class="flex justify-center md:justify-start lg:justify-start mt-4 lg:mt-0">
