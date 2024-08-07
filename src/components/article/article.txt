@@ -1,0 +1,83 @@
+<template>
+  <div v-if="article">
+    <div class="relative">
+      <img :src="headerImage" alt="Header Image" class="w-full h-[449px] object-cover">
+      <div class="absolute top-24 left-6 px-20 py-32 w-[750px] space-y-4 text-white">
+        <h1 class="text-[64px] text-left font-extrabold leading-tight">
+          {{ article.title }}
+        </h1>
+      </div>
+    </div>
+    <div class="flex">
+      <div>
+        <img :src="headerImage" alt="Header Image" class="w-847 h-[415px] object-cover">
+        <h1 class="font-semibold text-[18px] text-foundationGreyNormal">{{ article.date }}</h1>
+
+        <hr class="w-full border-t-[1px] border-gray-100 mt-5">
+        <div class="flex">
+          <p class="font-nunito text-left w-[1211px]">
+            {{ article.content }}
+          </p>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-else>
+    <p class="text-center mt-10">Article not found.</p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'BlogArticleView',
+  props: {
+    id: String,
+  },
+  data() {
+    return {
+      articles: [
+        {
+          id: '1',
+          title: 'The Benefits of Regular Plumbing Maintenance',
+          date: 'JULY 13, 2024',
+          image: 'header-img.png',
+          content: `Imagine this: you're relaxing in a hot shower, and suddenly, a geyser erupts from behind the wall...`, // Add full content here
+        },
+        {
+          id: '2',
+          title: 'Signs Your Home Needs Repiping: What to Look For',
+          date: 'JULY 13, 2024',
+          image: 'header-img.png',
+          content: `Here's the thing: pipes, like most things in life, don't last forever. While they silently transport water throughout your home, there are subtle signs that can warn you of potential trouble brewing beneath the surface. Here's how to know if your home might be whispering (or maybe even shouting) that it's time for a repiping:
+          The Tell-Tale Signs of Aging Pipes:
+          Discolored Water: Do you notice rusty or brown water coming out of your faucets? This can indicate corrosion within the pipes, contaminating your water supply.
+          Frequent Clogs: While occasional clogs happen, if you're constantly battling blockages, it might be a sign of deteriorating pipes that are flaking or collapsing internally.
+          Fluctuating Water Pressure: Low or inconsistent water pressure throughout your home can point to narrowed pipes due to rust or buildup.
+          Visible Pipe Leaks: This one's fairly obvious. If you see leaks or water damage around pipes, especially near connections, it's a clear sign of deterioration.
+          Unexplained Water Bill Spikes: A sudden increase in your water bill with no apparent change in water usage could be due to hidden leaks caused by compromised pipes.
+          
+          Beyond the Physical Signs:
+          Age is also a big factor. If your home was built more than 50 years ago, the pipes could be nearing the end of their expected lifespan, depending on the material. Certain pipe materials, like galvanized steel or polybutylene, have known issues with corrosion and shorter lifespans.
+          
+          Taking Action:
+          If you're experiencing any of these signs, don't wait for a major plumbing disaster to strike. A qualified plumber can assess your home's plumbing system and recommend the best course of action. Repiping your home might seem like a daunting task, but it's an investment that ensures clean, reliable water flow and peace of mind for years to come. Don’t fail to contact Zyons`,
+        },
+        // Add more articles here
+      ],
+      article: null,
+    };
+  },
+  created() {
+    this.article = this.articles.find((article) => article.id === this.id) || null;
+  },
+  computed: {
+    headerImage() {
+      return this.article ? require(`@/assets/${this.article.image}`) : '';
+    }
+  }
+};
+</script>
+
+<style scoped>
+/* Add any necessary styles here */
+</style>

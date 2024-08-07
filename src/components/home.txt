@@ -1,0 +1,445 @@
+<template>
+  <div>
+    <!-- Top Navbar with logo and phone numbers -->
+    <nav class="bg-white border-b border-gray-300 px-24 py- flex justify-between items-center font-sans">
+      <div class="flex items-center">
+        <img src="@/assets/logo.png" alt="Company Logo" class="h-24 mr-3">
+      </div>
+      <div class="flex space-x-8">
+        <!-- Email group -->
+        <div class="flex items-center space-x-5">
+          <img src="@/assets/envelope-dots.png" alt="Company Logo" class="h-12">
+          <div class="text-left">
+            <div class="font-bold text-base">EMAIL US</div>
+            <div class="text-sm">email@email.com</div>
+          </div>
+        </div>
+        <!-- Second phone number group, if needed -->
+        <div class="flex items-center space-x-5">
+          <img src="@/assets/hotline.png" alt="Phone icon" class="h-11">
+          <div class="text-left">
+            <div class="font-bold text-base">CALL US</div>
+            <div class="text-sm">(123) 456-7890</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navigation Links -->
+    <nav class="nav2 bg-customGold px-40 py-6">
+      <ul class="flex justify-center font-md text-base">
+        <li>
+          <router-link class="nav-link text-black no-underline px-10 py-6 border-r border-black hover: px-10 py-6 hover:bg-black hover:text-white font-sans" to="/">Home</router-link>
+        </li>
+        <li>
+          <router-link class="nav-link text-black no-underline  px-10 py-6 border-r border-black hover: px-10 py-6 hover:bg-black hover:text-white font-sans" to="/about">About</router-link>
+        </li>
+        <li>
+          <router-link class="nav-link text-black no-underline  px-10 py-6 border-r border-black hover: px-10 py-6 hover:bg-black hover:text-white font-sans" to="/services">Services</router-link>
+        </li>
+        <li>
+          <router-link class="nav-link text-black no-underline  px-10 py-6 border-r border-black hover: px-10 py-6 hover:bg-black hover:text-white font-sans" to="/blog">Blog</router-link>
+        </li>
+        <li>
+          <router-link class="nav-link text-white no-underline px-10 py-6 border-r border-black hover:bg-black hover:text-white bg-foundationDarker font-sans" to="/contact">Contact</router-link>
+        </li>
+      </ul>
+    </nav>
+  <div class="relative">
+    <img src="@/assets/header-img.png" alt="Header Image" class="w-full h-[843px] object-cover">
+    <div class="absolute top-40 left-6 px-20 py-32 w-[750px] space-y-4 text-white">
+      <h1 class="text-[56px] text-left font-extrabold leading-tight">
+        We Keep the Water Flowing and the Heat Glowing
+      </h1>
+      <h2 class="text-[20px] font-sans text-left">
+        We're your friendly neighborhood plumbers, ready to tackle any leak, drip, or clog with a smile
+      </h2>
+      <div>
+        <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
+            Contact Us
+        </button>
+      </div>
+    </div>
+  </div>
+  
+    <div class="about-us-container flex justify-between">
+        <div class="relative left-24">
+            <img src="@/assets/header-img.png" alt="Header Image" class=" absolute w-411 h-[284px] pt-16 object-cover">
+            <div class="relative w-[297px] h-[477px] bg-0 rounded left-40 top-40" style="border: 15px solid #f87171;">
+                <img src="@/assets/header-img.png" alt="Overlay Image" class="absolute top-6 left-6 w-[331px] h-[477px] object-cover">
+            </div>
+        </div>
+
+        <div class="mt-16 mr-24">
+            <div class="hr-container space-x-5">
+                <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+                <h1 class="font-extrabold text-[32px]">ABOUT US</h1>
+            </div>
+                <div class="pb-6">
+                    <p class="font-nunito text-left w-[544px]">
+                        Zyons Plumbing and Heating is your trusted partner for all things plumbing and heating. Founded on the principles of integrity and excellence, we have been serving the community for over a decade. 
+                        Our certified technicians are passionate about what they do and committed to delivering the best service every time. We provide a wide range of services for both residential and commercial clients.
+                    </p>
+        
+                    <p class="font-nunito text-left w-[544px] pt-12">
+                        At Zyons, we offer top-notch plumbing and heating services to keep your home comfortable and running smoothly. Whether it's a leaky faucet or a full heating system installation, our skilled team is ready to help. Reliable, friendly, and always professional – that's the Zyons promise.
+                    </p>
+                </div>  
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-nunito">
+                <div class="flex items-center space-x-2">
+                    <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+                    <p>Qualified Team</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+                    <p>Affordable Pricing</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+                    <p>Plumbing Experts</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <img src="@/assets/check-square.png" alt="Check square" class="h-6">
+                    <p>Quick Service</p>
+                </div>
+                <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="w-full h-[788px] rounded mt-40 bg-foundationGreyLight px-12"  style="">
+        <div class="hr-container space-x-5 pt-12 justify-center align-center">
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+            <h1 class="font-extrabold text-[32px]">OUR SERVICES</h1>
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Plumbing.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Residential and Commercial Plumbing</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Top-quality plumbing services for homes and businesses. Dependable, efficient, and professional.</p>
+            </div>
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Water-Heater.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Water heater repair & replacement</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Expert repair and replacement of water heaters to keep your home warm and comfortable.</p>
+            </div>
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Tools.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Repiping Services</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Replace old pipes with durable, high-quality materials for better water flow and reliability.</p>
+            </div>
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Water-Tap.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Faucet Repair & Replacement</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Repair and replace faucets and fixtures for enhanced functionality and style in your home.</p>
+            </div>
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Gas-Burner.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Gas Line Services</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Comprehensive gas line installation, repair, and maintenance by certified professionals.</p>
+            </div>
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Heating.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Hydronic Heating & Services</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Installation, repair, and maintenance of energy-efficient hydronic heating systems for consistent warmth.</p>
+            </div>
+
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Pump.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Pump Services</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Professional installation, repair, and maintenance of sump pumps, well pumps, and more.</p>
+            </div>
+
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="border: 1px solid #f87123;">
+                <img src="@/assets/Water-Pipe.png" alt="Check square" class="h-8">
+                <h1 class="font-extrabold text-[18px] text-center">Sewer & Drain Pipe Repair & Replacement</h1>
+                <p class="text-[16px] w-[224px] text-center font-nunito">Expert repair and replacement of sewer and drain pipes to prevent clogs and ensure smooth operation.</p>
+            </div>
+
+
+
+
+            
+        </div>
+
+    </div>
+
+
+    <div class="w-full h-[788px] mt-18"  style="">
+        <div class="hr-container space-x-5 pt-12 pl-12">
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+            <h1 class="font-extrabold text-[32px]">OUR RECENT PROJECTS</h1>
+        </div>
+
+        <div class="my-12 mx-24 justify-center align-center items-center">
+            <div class="flex space-x-4">
+                <img src="@/assets/Frame-48.png" alt="Check square" class="w-[393px] h-[508px]">
+
+                <div class="space-y-2">
+                    <img src="@/assets/Frame-45.png" alt="Check square" class="w-[418px] h-[250px]">
+                    <img src="@/assets/Frame-50.png" alt="Check square" class="w-[418px] h-[250px]">
+                </div>
+
+                <img src="@/assets/Frame-44.png" alt="Check square" class="w-[314px] h-[509px]">
+            </div>           
+            <div class="flex space-x-4 mt-2">
+                <img src="@/assets/Frame-51.png" alt="Check square" class="w-[393px] h-[250px]">
+                <img src="@/assets/Frame-52.png" alt="Check square" class="w-[418px] h-[250px]">
+                <img src="@/assets/Frame-53.png" alt="Check square" class="w-[314px] h-[250px]">
+            </div>   
+
+
+        </div>
+        <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
+                View More
+        </button>
+    </div>
+
+
+
+    <div class="w-full h-[644px] rounded mt-[240px] bg-[#EADBBD] px-12"  style="">
+        <div class="hr-container flex space-x-5 pt-12 justify-end items-center">
+            <h1 class="font-extrabold text-[32px]">TESTIMONIALS</h1>
+            <hr class="w-[50px] border-t-[3px] border-gray-400">
+        </div>
+
+        <div class="mt-8 flex justify-between align-center items-center">
+            <img src="@/assets/chevron-left.png" alt="Check square" class="h-8">
+
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="">
+                <img src="@/assets/Ellipse-2.png" alt="Check square" class="w-[91px] h-[87px]">
+                <h1 class="font-extrabold text-[18px] text-center">Michael D.</h1>
+                <img src="@/assets/Frame-321316190.png" alt="Check square" class="w-[91px] h-[87px]">
+                <p class="text-[16px] w-[407px] text-center font-nunito">“
+                    We woke up to a cold shower one morning and realized our water heater was on the fritz. Zyons came highly recommended by a friend, so I gave them a call. They were able to diagnose the problem quickly and explained everything clearly. They offered both repair and replacement options, and we opted for a new water heater. Thanks, Zyon!”
+                </p>
+            </div>
+            <div class="justify-center items-center align-center w-295 h-[254px] rounded mt-12 bg-0 space-y-2 flex flex-col" style="">
+                <img src="@/assets/Ellipse-3.png" alt="Check square" class="w-[91px] h-[87px]">
+                <h1 class="font-extrabold text-[18px] text-center">Michael D.</h1>
+                <img src="@/assets/Frame-321316190.png" alt="Check square" class="w-[91px] h-[87px]">
+                <p class="text-[16px] w-[407px] text-center font-nunito">“
+                    "Zyons Plumbing saved the day! My kitchen sink decided to overflow just before a dinner party. I called Zyon in a panic, and they were able to send a technician out within the hour. He was friendly, professional, and had the clog cleared in no time. I was so impressed with their responsiveness and expertise. They definitely saved my dinner party and my sanity!"
+                </p>
+            </div>
+
+            <img src="@/assets/chevron-right.png" alt="Check square" class="h-8">
+            
+        </div>
+
+    </div>
+
+    <div class="w-full h-[788px] rounded mt-18 bg-gray-100 px-12"  style="">
+        <div class="hr-container space-x-5 pt-12 justify-center align-center">
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+            <h1 class="font-extrabold text-[32px]">READ LATEST NEWS</h1>
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+            <div class="mt-12 space-y-2 text-left">
+            <img src="@/assets/image-12.png" alt="Check square" class="w-[387px] h-[289px] rounded">
+            <h1 class="font-semibold text-[18px]">JULY 13, 2024</h1>
+            <h1 class="font-extrabold text-[18px]">The Benefits of Regular Plumbing Maintenance</h1>
+            <div class="flex items-center">
+                <p class="text-[16px] w-[224px] text-foundationGreyDarker font-nunito">Read More</p>
+                <img src="@/assets/chevron-right.png" alt="Check square" class="h-6">
+            </div>
+            </div>
+
+            <div class="mt-12 space-y-2 text-left">
+            <img src="@/assets/image-12.png" alt="Check square" class="w-[387px] h-[289px] rounded">
+            <h1 class="font-semibold text-[18px]">JULY 13, 2024</h1>
+            <h1 class="font-extrabold text-[18px]">The Benefits of Regular Plumbing Maintenance</h1>
+            <div class="flex items-center">
+                <p class="text-[16px] w-[224px] text-foundationGreyDarker font-nunito">Read More</p>
+                <img src="@/assets/chevron-right.png" alt="Check square" class="h-6">
+            </div>
+            </div>
+
+            <div class="mt-12 space-y-2 text-left">
+                <img src="@/assets/image-12.png" alt="Check square" class="w-[387px] h-[289px] rounded">
+                <h1 class="font-semibold text-[18px]">JULY 13, 2024</h1>
+                <h1 class="font-extrabold text-[18px]">The Benefits of Regular Plumbing Maintenance</h1>
+                <div class="flex justify">
+                    <p class="text-[16px] w-[224px] text-foundationGreyDarker font-nunito">Read More</p>
+                    <img src="@/assets/chevron-right.png" alt="Check square" class="h-6">
+                </div>
+            </div>
+
+            
+        </div>
+
+        <button class="w-[190px] h-[60px] mt-12 bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
+                View More
+        </button>
+
+    </div>
+    
+
+    <div class="w-full h-[681px] rounded py-20 mt-18 bg-white px-12"  style="">
+        <div class="hr-container space-x-5 pt-12 pl-12">
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+            <h1 class="font-extrabold text-[32px]">FAQs</h1>
+        </div>
+
+        <div class="w-1138 h-[65px] px-12 my-5 justify-between items-center rounded flex col bg-foundationGreyLight" style="">
+            <p class="text-[16px] text-center font-nunito">Do you offer emergency plumbing services?</p>
+            <img src="@/assets/chevron-right.png" alt="Check square" class="h-8">
+        </div>
+
+        <div class="w-1138 h-[65px] px-12 my-5 justify-between items-center rounded flex col bg-foundationGreyLight" style="">
+            <p class="text-[16px] text-center font-nunito">What are your qualifications and certifications?</p>
+            <img src="@/assets/chevron-right.png" alt="Check square" class="h-8">
+        </div>
+
+        <div class="w-1138 h-[65px] px-12 my-5 justify-between items-center rounded flex col bg-foundationGreyLight" style="">
+            <p class="text-[16px] text-center font-nunito">What types of water heaters do you service?</p>
+            <img src="@/assets/chevron-right.png" alt="Check square" class="h-8">
+        </div>
+       <div class="w-1138 h-[65px] px-12 my-5 justify-between items-center rounded flex col bg-foundationGreyLight" style="">
+            <p class="text-[16px] text-center font-nunito">How do I schedule a service appointment with Zyons Plumbing & Heating?</p>
+            <img src="@/assets/chevron-right.png" alt="Check square" class="h-8">
+        </div>
+
+    </div>
+
+
+    <div class="w-full h-[788px] rounded mt-18 px-12"  style="">
+        <div class="hr-container space-x-5 pt-12 justify-center align-center">
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+            <h1 class="font-extrabold text-[32px]">GET IN TOUCH</h1>
+            <hr class="w-[50px] border-t-[3px] border-gray-400 mr-4">
+        </div>
+        <div class="flex mt-16  justify-center ">
+            <div class="space-y-5">
+                <p class="text-[16px] w-[521px] text-left font-nunito">If you have any questions or comments about our services, contact us using the form and we will surely get back to you.</p>
+
+                <div class="space-y-5">
+                    <div class="text-left flex items-center space-x-5">
+                        <img src="@/assets/Phone.png" alt="Phone icon" class="h-6">
+                        <div class="text-sm">+1 (587) 879 4211</div>
+                    </div>                    
+                    <div class="text-left flex items-center space-x-5">
+                        <img src="@/assets/Email.png" alt="Phone icon" class="h-6">
+                        <div class="text-sm">zyonsplumbingnheating@gmail.com</div>
+                    </div>
+                    <div class="text-left flex items-center space-x-5">
+                        <img src="@/assets/Location.png" alt="Phone icon" class="h-6">
+                        <div class="text-sm"> 8920 100st nw  Edmonton Alberta.</div>
+                    </div>
+                </div>  
+                <p class="text-[16px] w-[5] text-left font-nunito">MON - SAT : 8 AM - 6 PM, SUN (Closed)</p>
+                <div class="text-left flex items-center space-x-5">
+                    <img src="@/assets/Phone.png" alt="Phone icon" class="h-6">
+
+                    <img src="@/assets/Email.png" alt="Phone icon" class="h-6">
+
+                    <img src="@/assets/Location.png" alt="Phone icon" class="h-6">
+                </div>  
+            </div>
+            <ContactForm />
+        </div>
+    </div>
+
+    <div class="w-full h-[386px] mt-18 bg-customGold px-24 py-8" space-y-6 style="">
+        <div class="flex justify-between space-y-5">
+            <div class="">
+                <img src="@/assets/logo.png" alt="Company Logo" class="h-24 mr-3">
+                <p class="font-nunito text-[#FFFFFF] text-left w-[386px]">
+                    Zyons Plumbing & Heating is your trusted partner for top-quality plumbing and heating services. With a commitment to excellence and customer satisfaction, we ensure your home remains comfortable and efficient. Contact us for reliable, professional solutions.
+                </p>
+                <div class="text-left flex items-center space-x-5 mt-6">
+                    <img src="@/assets/Phone.svg" alt="Phone icon" class="h-6">
+                    <img src="@/assets/Email.svg" alt="Phone icon" class="h-6">
+                    <img src="@/assets/Location.svg" alt="Phone icon" class="h-6">
+                </div>               
+            </div>
+            <div class="space-y-5 mt-20">
+                <h1 class="font-bold text-[#FFFFFF] text-base text-left">CONTACT US</h1>
+                <div class="space-y-2">
+                    <div class="text-left flex items-center space-x-5">
+                        <img src="@/assets/Phone.svg" alt="Phone icon" class="h-6">
+                        <p class="text-sm text-[#FFFFFF]">+1 (587) 879 4211</p>
+                    </div>                    
+                    <div class="text-left flex items-center space-x-5">
+                        <img src="@/assets/Email.svg" alt="Phone icon" class="h-6">
+                        <p class="text-sm text-[#FFFFFF]">zyonsplumbingnheating@gmail.com</p>
+                    </div>
+                    <div class="text-left flex items-center space-x-5">
+                        <img src="@/assets/Location.svg" alt="Phone icon" class="h-6">
+                        <p class="text-sm text-[#FFFFFF]"> 8920 100st nw  Edmonton Alberta.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-5 mt-20">
+                <h1 class="font-bold text-[#FFFFFF] text-base text-left">QUICK LINKS</h1>
+                <div class="space-y-2">
+                    <p class="text-sm text-left text-[#FFFFFF]">Home</p>
+                    <p class="text-sm text-left text-[#FFFFFF]">About</p>
+                    <p class="text-sm text-left text-[#FFFFFF]">Services</p>
+                    <p class="text-sm text-left text-[#FFFFFF]">Blog</p>
+                </div>
+            </div>
+        </div>
+        <hr class="w-full border-t-[1px] border-gray-100 mt-5">
+        <p class="text-white">Copyright © Zyon Plumbing & Heating 2024. All rights reserved.</p>        
+    </div>
+
+  
+  </div>
+</template>
+
+<script>
+import ContactForm from '@/components/ContactForm.vue'
+
+
+export default {
+  name: 'NavBar',
+  components: {
+    ContactForm
+  }
+}
+</script>
+
+<style scoped>
+/* Custom styles if any */
+.logo {
+  width: 232px;
+  height: 105px;
+}
+
+nav2 {
+  background-color: #BA8C2A;
+
+}
+.nav-link {
+  background-color: #BA8C2A;
+  padding-top: 26.5px;
+  padding-bottom: 27px;
+}
+
+.bg-foundationDarker {
+  background-color: #41310F;
+}
+
+.hr-container {
+  display: flex;
+  align-items: center;
+}
+
+.custom-hr {
+  width: 50px;
+  border-top: 3px solid #cccccc;
+}
+
+</style>
