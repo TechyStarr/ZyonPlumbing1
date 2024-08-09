@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full mt-8 md:mt-18 py-4 md:py-12">
+  <div id="our-project-gallery" class="w-full mt-8 md:mt-18 py-4 md:py-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       <h1 class="font-extrabold text-[18px] md:text-[32px]">OUR PROJECT GALLERY</h1>
@@ -18,7 +18,7 @@
       <div class="flex flex-wrap md:flex-nowrap space-x-4 mt-2">
         <img v-lazy="require('@/assets/Frame-51.png')" alt="Check square" class="w-[163px] md:w-[393px] h-[98px] md:h-[250px] object-cover rounded-[10px]">
         <img v-lazy="require('@/assets/Frame-52.png')" alt="Check square" class="w-[163px] md:w-[418px] h-[98px] md:h-[250px] object-cover rounded-[10px]">
-        <img v-lazy="require('@/assets/Frame-53.png')" alt="Check square" class="hidden md:w-[314px] h-[98px] md:h-[250px] object-cover rounded-[10px]">
+        <img v-lazy="require('@/assets/Frame-53.png')" alt="Check square" class="hidden md:block w-[314px] h-[98px] md:h-[250px] object-cover rounded-[10px]">
       </div>
       <div class="flex flex-wrap md:flex-nowrap space-x-4">
         <div class="space-y-2 flex-">

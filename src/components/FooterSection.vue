@@ -35,10 +35,11 @@
         <div class="space-y-5 pt-6 md:pt-20">
           <h1 class="font-bold text-[#FFFFFF] text-base text-left">QUICK LINKS</h1>
           <div class="space-y-2">
-            <p class="text-sm text-left text-[#FFFFFF] hover-text-red">Home</p>
-            <p class="text-sm text-left text-[#FFFFFF] hover-text-red">About</p>
-            <p class="text-sm text-left text-[#FFFFFF] hover-text-red">Services</p>
-            <p class="text-sm text-left text-[#FFFFFF] hover-text-red">Blog</p>
+
+            <router-link to="/"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">Home</p></router-link>
+            <router-link to="/about"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">About</p></router-link>
+            <router-link to="/services"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">Services</p></router-link>
+            <router-link to="/blog"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">Blog</p></router-link>
           </div>
         </div>
       </div>

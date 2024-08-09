@@ -1,13 +1,14 @@
 <template>
-  <div class="w-full h-auto rounded mt-1 px- py-6 md:p-12">
+  <div id="contact" class="w-full h-auto rounded mt-1 my-36 md:my-0 py-10 md:py-24 px-4 md:px-12">
+
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
       <h1 class="font-extrabold text-[18px] md:text-[32px] text-foundationGreyDarker">GET IN TOUCH</h1>
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
     </div>
-    <div class="flex flex-col md:flex-row mt-8 justify-between mx-8 md:mx-20 space-y-12">
+    <div class="flex flex-col md:flex-row justify-between mx-4 md:mx-20 space-y-12">
       <div class="space-y-8">
-        <p class="text-[16px] md:text-[20px] w-full md:w-[521px] text-left text-foundationGreyDarker">If you have any questions or comments about our services, contact us using the form and we will surely get back to you.</p>
+        <p class="text-[16px] md:text-[20px] mt-10 w-[326px] md:w-[521px] text-center md:text-left text-foundationGreyDarker">If you have any questions or comments about our services, contact us using the form and we will surely get back to you.</p>
 
         <div class="space-y-5 hidden md:block">
           <div class="text-left flex items-center space-x-5">
@@ -23,15 +24,27 @@
             <div class="text-sm text-foundationGreyDarker">8920 100st nw Edmonton Alberta.</div>
           </div>
         </div>
-        <p class="text-[16px] text-left font-nunito hidden md:block">MON - SAT : 8 AM - 6 PM, SUN (Closed)</p>
+        <p class="text-[16px] text-left font-nunito hidden md:block">MON - FRI : 8 AM - 4 PM, SUN - SAT (Closed)</p>
         <div class="text-left flex items-center space-x-5 hidden md:flex">
-          <img v-lazy="require('@/assets/Phone.png')" alt="Phone icon" class="h-6">
-          <img v-lazy="require('@/assets/Email.png')" alt="Phone icon" class="h-6">
-          <img v-lazy="require('@/assets/Location.png')" alt="Phone icon" class="h-6">
+          <img v-lazy="require('@/assets/Facebook-b.svg')" alt="Phone icon" class="h-6">
+          <img v-lazy="require('@/assets/Instagram-b.svg')" alt="Phone icon" class="h-6">
+          <img v-lazy="require('@/assets/LinkedIn2-b.svg')" alt="Phone icon" class="h-6">
         </div>
       </div>
       <ContactForm />
     </div>
+    <div class="relative hidden md:block md:-left-12">
+      <div class="absolute w-[3] h-[150px] -top-16">
+        <img v-lazy="require('@/assets/tools-icon.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
+      </div>
+    </div>
+    <div class="relative md:hidden -right-36">
+      <div class="absolute w-[3] h-[150px] top-2">
+        <img v-lazy="require('@/assets/tool-2.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
+      </div>
+    </div>
+
+
   </div>
 </template>
 

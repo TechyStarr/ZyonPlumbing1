@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-[788p rounded mt-16 lg:mt-40 bg-foundationGreyLight py-12 px-[50px]" style="">
+    <div class="w-full h-[788p rounded mt-16 lg:mt-40 bg-foundationGreyLight py-12 px-4 md:px-[50px]" style="">
         <div class="flex space-x-5 justify-center items-center">
             <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
             <h1 class="font-extrabold text-[18px] md:text-[30px] lg:text-[32px]">OUR SERVICES</h1>

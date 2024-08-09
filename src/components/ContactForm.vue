@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="mt-">
     <form class=" w-full max-w-lg space-y-5">
         <input
           type="text"
@@ -32,7 +32,7 @@
 
       <button
         type="submit"
-        class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full"
+        class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full justify-start"
         @click.prevent="handleSubmit"
       >
         Send Message

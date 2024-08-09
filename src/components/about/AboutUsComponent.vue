@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-12">
+  <div class="">
     <about-header-section />
     <about-us-section />
     <mission-section />

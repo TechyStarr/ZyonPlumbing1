@@ -17,7 +17,7 @@
       </div>
       <div class="flex space-x-4 mt-2">
         <img v-lazy="require('@/assets/Frame-51.png')" alt="Check square" class="w-[393px] h-[250px]">
-        <img v-lazy="require('@/assets/Frame-52.png')" alt="Check square" class="w-[322px] h-[250px]">
+        <img v-lazy="require('@/assets/Frame-52.png')" alt="Check square" class="w-[418px] h-[250px]">
         <img v-lazy="require('@/assets/Frame-53.png')" alt="Check square" class="w-[314px] h-[250px]">
       </div>
     </div>
@@ -41,41 +41,55 @@
         <span v-for="(image, index) in mobileImages" :key="index" @click="goToImage(index)" :class="{'bg-gray-800': index === currentIndex, 'bg-gray-300': index !== currentIndex}" class="w-2 h-2 rounded-full cursor-pointer"></span>
       </div>
     </div>
-
-    <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mt-8">
-      View More
-    </button>
+    <router-link to="/services">
+      <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mt-8">
+        View More
+      </button>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-name: 'AboutUsSection',
-data() {
-  return {
-    currentIndex: 0,
-    mobileImages: [
-      require('@/assets/Frame-48.png'),
-      require('@/assets/Frame-45.png'),
-      require('@/assets/Frame-50.png'),
-      require('@/assets/Frame-44.png'),
-      require('@/assets/Frame-51.png'),
-      require('@/assets/Frame-52.png'),
-      require('@/assets/Frame-53.png'),
-    ],
-  };
-},
-methods: {
-  prevImage() {
-    this.currentIndex = (this.currentIndex === 0) ? this.mobileImages.length - 1 : this.currentIndex - 1;
+  name: 'AboutUsSection',
+  data() {
+    return {
+      currentIndex: 0,
+      mobileImages: [
+        require('@/assets/Frame-48.png'),
+        require('@/assets/Frame-45.png'),
+        require('@/assets/Frame-50.png'),
+        require('@/assets/Frame-44.png'),
+        require('@/assets/Frame-51.png'),
+        require('@/assets/Frame-52.png'),
+        require('@/assets/Frame-53.png'),
+      ],
+      slideInterval: null,
+    };
   },
-  nextImage() {
-    this.currentIndex = (this.currentIndex === this.mobileImages.length - 1) ? 0 : this.currentIndex + 1;
+  methods: {
+    prevImage() {
+      this.currentIndex = (this.currentIndex === 0) ? this.mobileImages.length - 1 : this.currentIndex - 1;
+    },
+    nextImage() {
+      this.currentIndex = (this.currentIndex === this.mobileImages.length - 1) ? 0 : this.currentIndex + 1;
+    },
+    goToImage(index) {
+      this.currentIndex = index;
+    },
+    startAutoSlide() {
+      this.slideInterval = setInterval(this.nextImage, 5000);
+    },
+    stopAutoSlide() {
+      clearInterval(this.slideInterval);
+    },
   },
-  goToImage(index) {
-    this.currentIndex = index;
+  mounted() {
+    this.startAutoSlide();
   },
-},
+  beforeUnmount() {
+    this.stopAutoSlide();
+  },
 };
 </script>
 

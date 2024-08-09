@@ -9,9 +9,15 @@
         We're your friendly neighborhood plumbers, ready to tackle any leak, drip, or clog with a smile
       </h2>
       <div class="flex justify-center md:justify-start">
-        <button class="w-[150px] h-[50px] md:w-[190px] md:h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
+        <router-link to="/contact">
+          <button class="w-[150px] md:w-[170px] lg:w-[190px] h-[50px] md:h-[55px] lg:h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full md:mt-10">
+            Contact Us
+          </button>
+        </router-link>
+
+        <!-- <button class="w-[150px] h-[50px] md:w-[190px] md:h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
           Contact Us
-        </button>
+        </button> -->
       </div>
     </div>
   </div>

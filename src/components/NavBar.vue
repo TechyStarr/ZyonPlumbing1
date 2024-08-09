@@ -22,7 +22,7 @@
           <div class="text-left">
             <div class="font-bold text-sm md:text-base">CALL US</div>
             <div class="text-xs md:text-sm">
-              <a href="tel:1234567890" class="text-black no-underline">(123) 456-7890</a>
+              <a href="tel:+18259752906" class="text-black no-underline">+1 (825) 975 2906</a>
             </div>
           </div>
         </div>
@@ -51,16 +51,16 @@
               <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/" active-class="bg-foundationGreyDarker text-white">Home</router-link>
             </li>
             <li>
-              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/about" active-class="bg-foundationGreyDarker text-white">About</router-link>
+              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/about" active-class="bg-foundationGreyDar">About</router-link>
             </li>
             <li>
-              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/services" active-class="bg-foundationGreyDarker text-white">Services</router-link>
+              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/services" active-class="bg-foundationGreyDar">Services</router-link>
             </li>
             <li>
-              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/blog" active-class="bg-foundationGreyDarker text-white">Blog</router-link>
+              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/blog" active-class="bg-foundationGreyDar">Blog</router-link>
             </li>
             <li>
-              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/contact" active-class="bg-foundationGreyDarker text-white">Contact</router-link>
+              <router-link @click="toggleMenu" class="block text-black no-underline px-4 py-2 hover:bg-black hover:text-white font-sans" to="/contact" active-class="bg-foundationGreyDar">Contact</router-link>
             </li>
           </ul>
         </div>
@@ -83,7 +83,7 @@
           <router-link class="nav-link text-black no-underline px-10 py-6 border-r border-black hover:bg-black hover:text-white font-sans" to="/blog" active-class="bg-foundationGreyDarker text-white">Blog</router-link>
         </li>
         <li>
-          <router-link class="nav-link text-black no-underline px-10 py-6 border-r border-black hover:bg-black hover:text-white font-sans" to="/contact" active-class="bg-foundationGreyDarker text-white">Contact</router-link>
+          <router-link class="nav-link text-black no-underline px-10 py-6 hover:bg-black hover:text-white font-sans" to="/contact" active-class="bg-foundationGreyDarker text-white">Contact</router-link>
         </li>
       </ul>
     </nav>

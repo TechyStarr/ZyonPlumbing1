@@ -1,13 +1,12 @@
 <template>
-  <div class="w-full h-auto rounded mt-[70px] md:mt-32 lg:mt-18 py-24 bg-white px-12 md:px-36">
-    <div class="relative -left-10">
-      <div class="absolute w-[3] h-[150px] -top-24">
+  <div class="w-full rounded mt-[70px] md:mt-32 lg:mt-18 py-8 md:py-32 bg-white px-4 md:px-36">
+    <div class="relative hidden md:block md:-left-10">
+      <div class="absolute w-[3] h-[150px] -top-32">
         <img v-lazy="require('@/assets/Question-Mark.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
       </div>
     </div>
-
     <div class="flex space-x-5 items-center">
-      <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
+      <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       <h1 class="font-extrabold text-[32px] text-foundationGreyDarker">FAQs</h1>
     </div>
 
@@ -16,10 +15,16 @@
         <p class="text-[14px] md:text-[16px] font-semibold text-foundationGreyDarker text-left">{{ faq.question }}</p>
         <img v-lazy="faq.icon" :class="{'rotate-90': faq.open, 'rotate-0': !faq.open}" class="h-8 transition-transform duration-200">
       </div>
-      <div v-if="faq.open" class="w-full rounded px-4 md:px-8 py-4 bg-fountActive">
+      <div v-if="faq.open" class="w-full rounded px-4 md:px-8 py-2 md:py-4 bg-fountActive">
         <p class="text-[14px] md:text-[16px] text-left font-semibold mb-8">{{ faq.answer }}</p>
       </div>
     </div>
+    <div class="relative hidden md:block md:-right-[600px]">
+      <div class="absolute w-[3] h-[150px] -top-[22px]">
+        <img v-lazy="require('@/assets/Question-Mark1.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -51,7 +56,7 @@ export default {
         },
         {
           question: "How do I schedule a service appointment with Zyons Plumbing & Heating?",
-          answer: "Scheduling a service appointment with Zyons Plumbing & Heating is easy. You can call us at +1 (587) 879 4211,  email us at zyonsplumbingnheating@gmail.com, or fill out the contact form on our website. Our friendly team will assist you in setting up a convenient time for your service.",
+          answer: "Scheduling a service appointment with Zyons Plumbing & Heating is easy. You can call us at +1 (825) 975 2906,  email us at zyonsplumbingnheating@gmail.com, or fill out the contact form on our website. Our friendly team will assist you in setting up a convenient time for your service.",
           open: false,
           icon: ChevronRightIcon
         }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="blog">
     <Navbar />
     <BlogHeaderSection />
     <BlogSection />

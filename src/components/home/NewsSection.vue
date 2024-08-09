@@ -9,7 +9,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div v-for="article in displayedArticles" :key="article.id" class="mt-6 md:mt-12 space-y-2 text-left">
         <div class="relative w-[335px] md:w-[387px] h-[289px]">
-          <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded">
+          <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded object-cover">
           <p class="absolute top-2 left-2 bg-foundationGoldNormal text-white font-bold py-2 px-4 rounded-full">
             {{ article.category }}
           </p>
@@ -24,10 +24,15 @@
         </div>
       </div>
     </div>
+    <router-link to="/blog">
+      <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mt-8">
+        View Articles
+      </button>
+    </router-link>
 
-    <button v-if="isMobile" class="w-[190px] h-[60px] mt-12 bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
+    <!-- <button  class="w-[190px] h-[60px] mt-12 bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
       View Articles
-    </button>
+    </button> -->
   </div>
 </template>
 
@@ -42,21 +47,21 @@ export default {
           id: '1',
           title: 'The Benefits of Regular Plumbing Maintenance',
           date: 'JULY 13, 2024',
-          image: 'image-12.png',
+          image: 'Frame-1.png',
           category: 'Maintenance'
         },
         {
           id: '2',
           title: 'Signs Your Home Needs Repiping: What to Look For',
           date: 'JULY 13, 2024',
-          image: 'image-12.png',
+          image: 'Frame3.png',
           category: 'Maintenance'
         },
         {
           id: '3',
-          title: 'Signs Your Home Needs Repiping: What to Look For',
-          date: 'JULY 13, 2024',
-          image: 'image-12.png',
+          title: 'Top questions to ask when hiring a plumber',
+          date: 'AUGUST 12, 2024',
+          image: 'Frame-8.png',
           category: 'Maintenance'
         },
         // Add more articles here
