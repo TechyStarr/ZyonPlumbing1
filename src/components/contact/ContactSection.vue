@@ -1,41 +1,37 @@
 <template>
-    <div class="w-full h-[788] rounded mt-18 p-12" style="">
+  <div class="w-full h-auto rounded mt-1 my-36 md:my-0 py-10 md:py-24 px-4 md:px-12">
       <div class="flex space-x-5 justify-center items-center">
         <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
         <h1 class="font-extrabold text-[18px] md:text-[32px]">CONTACT US</h1>
         <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       </div>
-      <div class="md:flex mt-4 md:mt-16 justify-center">
-        <div class="space-y-5">
-          <p class="text-[16px] w-[314px] md:w-[521px] text-center md:text-left font-nunito">
-            If you have any questions or comments about our services, contact us using the form and we will surely get back to you.
-          </p>
-          <div class="space-y-5">
-            <div class="text-left flex items-center space-x-5">
-              <img v-lazy="require('@/assets/Phone.png')" alt="Phone icon" class="h-6">
-              <div class="text-sm">+1 (825) 975 2906</div>
-            </div>
-            <div class="text-left flex items-center space-x-5">
-              <img v-lazy="require('@/assets/Email.png')" alt="Phone icon" class="h-6">
-              <div class="text-sm">zyonsplumbingnheating@gmail.com</div>
-            </div>
-            <div class="text-left flex items-center space-x-5">
-              <img v-lazy="require('@/assets/Location.png')" alt="Phone icon" class="h-6">
-              <div class="text-sm">8920 100st nw Edmonton Alberta.</div>
-            </div>
+
+      <div class="flex flex-col md:flex-row justify-between mx-4 md:mx-20 space-y-12">
+      <div class="space-y-8">
+        <p class="text-[16px] md:text-[20px] mt-10 w-[326px] md:w-[521px] text-center md:text-left text-foundationGreyDarker">If you have any questions or comments about our services, contact us using the form and we will surely get back to you.</p>
+
+        <div class="space-y-5 hidden md:block">
+          <div class="text-left flex items-center space-x-5">
+            <img v-lazy="require('@/assets/Phone.png')" alt="Phone icon" class="h-6">
+            <div class="text-sm text-foundationGreyDarker">+1 (825) 975 2906</div>
           </div>
-          <p class="text-[14px] md:text-[16px] w-[5] text-center md:text-left font-nunito font-bold">
-            MON - SAT : 8 AM - 6 PM, SUN (Closed)
-          </p>
-          <div class="text-left flex justify-center md:justify-start items-center space-x-5">
-            <img v-lazy="require('@/assets/Facebook-Circled.svg')" alt="Facebook icon" class="h-6 svg-black">
-            <img v-lazy="require('@/assets/Instagram-2.svg')" alt="Instagram icon" class="h-6">
-            <img v-lazy="require('@/assets/LinkedIn.svg')" alt="LinkedIn icon" class="h-6">
+          <div class="text-left flex items-center space-x-5">
+            <img v-lazy="require('@/assets/Email.png')" alt="Phone icon" class="h-6">
+            <div class="text-sm text-foundationGreyDarker">zyonsplumbingnheating@gmail.com</div>
+          </div>
+          <div class="text-left flex items-center space-x-5">
+            <img v-lazy="require('@/assets/Location.png')" alt="Phone icon" class="h-6">
+            <div class="text-sm text-foundationGreyDarker">8920 100st nw Edmonton Alberta.</div>
           </div>
         </div>
-        <div class="mt-[72px]">
-          <ContactForm />
+        <p class="text-[16px] text-left font-nunito hidden md:block">MON - FRI : 8 AM - 4 PM, SUN - SAT (Closed)</p>
+        <div class="text-left flex items-center space-x-5 hidden md:flex">
+          <img v-lazy="require('@/assets/Facebook-b.svg')" alt="Phone icon" class="h-6">
+          <img v-lazy="require('@/assets/Instagram-b.svg')" alt="Phone icon" class="h-6">
+          <img v-lazy="require('@/assets/LinkedIn2-b.svg')" alt="Phone icon" class="h-6">
         </div>
+      </div>
+      <ContactForm />
       </div>
     </div>
   </template>

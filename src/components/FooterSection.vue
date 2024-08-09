@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full mt-18 bg-foundationGoldDarker px-12 md:px-24 py-8" space-y-6>
+    <div class="w-full mt-8 md:mt-18 bg-foundationGoldDarker px-12 md:px-24 py-8" space-y-6>
       <div class="md:flex justify-between space-y-5">
         <div>
           <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-24 mr-3">

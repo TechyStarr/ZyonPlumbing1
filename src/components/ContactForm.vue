@@ -30,13 +30,14 @@
           rows="5"
         ></textarea>
 
-      <button
-        type="submit"
-        class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full justify-start"
-        @click.prevent="handleSubmit"
-      >
-        Send Message
-      </button>
+        <button
+          type="submit"
+          class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full text-center flex items-center justify-center"
+          @click.prevent="handleSubmit"
+        >
+          Send Message
+        </button>
+
     </form>
   </div>
 </template>

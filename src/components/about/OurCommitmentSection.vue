@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full space-y-1 mt-8 md:mt-[70px] px-4 md:px-0">
+  <div class="w-full mb-8 space-y-1 mt-8 md:mt-[70px] px-4 md:px-0">
     <div>
       <div class="flex space-x-5 justify-center items-center">
         <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">

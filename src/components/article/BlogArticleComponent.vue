@@ -1,6 +1,6 @@
 <template>
   <div v-if="article">
-    <div class="relative">
+    <div class="relative md:mt-[185px]">
       <img v-lazy="require('@/assets/imageblog1.png')" alt="Blog Header Image" class="w-full h-[449px] object-cover">
       <div class="absolute top-64 md:top-20 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
         <h1 class="text-[24px] md:text-[48px] lg:text-[64px] w-[297px] md:w-[800px] lg:w-[1150px] text-center md:text-left font-extrabold leading-tight">

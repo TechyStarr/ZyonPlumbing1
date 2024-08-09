@@ -1,12 +1,12 @@
 <template>
-  <div class="w md:w-full rounded mt-18 bg-gray-100 pt-12 p-6  md:p-12">
+  <div class="w-full rounded mt-18 bg-gray-100 pt-12 p-6 md:p-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       <h1 class="font-extrabold text-[18px] md:text-[32px]">READ LATEST NEWS</h1>
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
     </div>
 
-    <div class="flex font-nunito mt-7 md:mt-12 space-x-2 md:space-x-3 ml-9 md:ml-8 text-[14px] md:text-[16px]">
+    <div class="flex font-nunito mt-7 md:mt-12 space-x-2 md:space-x-3 ml-4 md:ml-0 text-[14px] md:text-[16px]">
       <p class="w-[44px] md:w-[61px] h-[20px] md:h-[30px] bg-customGold hover:bg-customGold text-white rounded-full flex items-center justify-center">
         All
       </p>
@@ -21,11 +21,11 @@
       </p>
     </div>
 
-    <div class="flex justify-center px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-8">
+    <div class="flex justify-center px-4 md:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div v-for="article in articles" :key="article.id" class="mt-7 md:mt-12 space-y-2 text-left">
-          <div class="relative w-[387px] h-[289px]">
-            <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-[303px] md:w-full h-full rounded">
+          <div class="relative w-full h-[289px]">
+            <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded">
             <p class="absolute top-2 left-2 bg-foundationGoldNormal text-[16px] md:text-[18px] text-white font-bold py-2 px-4 rounded-full">
               {{ article.category }}
             </p>
@@ -65,21 +65,21 @@ export default {
         {
           id: '2',
           title: 'Signs Your Home Needs Repiping: What to Look For',
-          date: 'JULY 13, 2024',
+          date: 'AUGUST 24, 2024',
           image: 'image-13.png',
           category: 'Maintenance'
         },
         {
           id: '3',
-          title: 'Signs Your Home Needs Repiping: What to Look For',
-          date: 'JULY 13, 2024',
+          title: 'Top questions to ask when hiring a plumber',
+          date: 'AUGUST 1, 2024',
           image: 'image-14.png',
           category: 'Maintenance'
         },
         {
           id: '4',
-          title: 'Signs Your Home Needs Repiping: What to Look For',
-          date: 'JULY 13, 2024',
+          title: 'How to choose the best plumbing fixtures for your bathroom remodel',
+          date: 'JULY 24, 2024',
           image: 'image14-1.png',
           category: 'Maintenance'
         },

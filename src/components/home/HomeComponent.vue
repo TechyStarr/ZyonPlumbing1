@@ -1,5 +1,5 @@
 <template>
-  <div space-y>
+  <div space-y class="overflow-hidden">
     <header-section />
     <about-us-section />
     <services-section />

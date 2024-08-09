@@ -1,6 +1,5 @@
 <template>
-  <div id="contact" class="w-full h-auto rounded mt-1 my-36 md:my-0 py-10 md:py-24 px-4 md:px-12">
-
+  <div id="contact" class="overflow-hidden w-full h-auto rounded mt-1 my-36 md:my-0 py-10 md:py-24 px-4 md:px-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
       <h1 class="font-extrabold text-[18px] md:text-[32px] text-foundationGreyDarker">GET IN TOUCH</h1>
@@ -35,16 +34,19 @@
     </div>
     <div class="relative hidden md:block md:-left-12">
       <div class="absolute w-[3] h-[150px] -top-16">
-        <img v-lazy="require('@/assets/tools-icon.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
+        <img v-lazy="require('@/assets/tools-icon.png')" alt="Tools Icon" class="w-full h-full rounded-[10px] object-cover">
       </div>
     </div>
-    <div class="relative md:hidden -right-36">
+    <div class="relative md:hidden" style="height: 20px;">
+      <div class="absolute right-[-260px] -top-12 w-[460px]">
+        <img v-lazy="require('@/assets/tool-2.png')" alt="Tool Image" class="w-full h-full object-cover rounded-[10px]">
+      </div>
+    </div>
+    <!-- <div class="relative md:hidden right-0">
       <div class="absolute w-[3] h-[150px] top-2">
-        <img v-lazy="require('@/assets/tool-2.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
+        <img v-lazy="require('@/assets/tool-2.png')" alt="Tool Image" class="rounded-[10px] object-cover">
       </div>
-    </div>
-
-
+    </div> -->
   </div>
 </template>
 
