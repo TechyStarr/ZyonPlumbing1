@@ -196,6 +196,7 @@
 
 <script>
 import ToastNotification from '@/components/ToastNotification.vue';
+import { nextTick } from 'vue';
 
 export default {
   name: 'BlogArticleComponent',
@@ -203,7 +204,9 @@ export default {
     ToastNotification,
   },
   mounted() {
-    window.scrollTo(0, 0); // Forces the scroll to the top
+    nextTick(() => {
+      window.scrollTo(0, 0); // Forces the scroll to the top after rendering
+    });
   },
   props: {
     article: {
