@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full mt-8 md:mt-18 bg-foundationGoldDarker px-12 md:px-24 py-8" space-y-6>
+    <div class="w-full mt-8 md:mt-18 bg-foundationGoldDarker px-6 md:px-20 py-8">
       <div class="md:flex justify-between space-y-5">
         <div>
           <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-24 mr-3">
@@ -7,12 +7,21 @@
             Zyons Plumbing & Heating is your trusted partner for top-quality plumbing and heating services. With a commitment to excellence and customer satisfaction, we ensure your home remains comfortable and efficient. Contact us for reliable, professional solutions.
           </p>
           <div class="text-left flex items-center space-x-5 mt-6">
-            <!-- <img v-lazy="require('@/assets/Phone.svg')" alt="Phone icon" class="h-6 icon-hover">
-            <img v-lazy="require('@/assets/Email.svg')" alt="Email icon" class="h-6 icon-hover">
-            <img v-lazy="require('@/assets/Location.svg')" alt="Location icon" class="h-6 icon-hover"> -->
-            <img v-lazy="require('@/assets/Facebook-w.svg')" alt="Facebook icon" class="h-6 svg-black icon-hover">
+            <!-- <img v-lazy="require('@/assets/Facebook-w.svg')" alt="Facebook icon" class="h-6 svg-black icon-hover">
             <img v-lazy="require('@/assets/Instagram-w.svg')" alt="Instagram icon" class="h-6 icon-hover">
-            <img v-lazy="require('@/assets/LinkedIn2-w.svg')" alt="LinkedIn icon" class="h-6 icon-hover">
+            <img v-lazy="require('@/assets/LinkedIn2-w.svg')" alt="LinkedIn icon" class="h-6 icon-hover"> -->
+            <!-- Facebook Icon -->
+            <a href="https://www.facebook.com/profile.php?id=61563833889325&mibextid=ZbWKwL" target="_blank">
+              <img src="@/assets/Facebook-w.svg" alt="Facebook Logo" class="h-5 md:h-[30px] cursor-pointer">
+            </a>
+            <!-- Instagram Icon -->
+            <a href="Instagram.com/zyonsplumbingandheating" target="_blank">
+              <img src="@/assets/Instagram-w.svg" alt="Instagram Logo" class="h-5 md:h-[30px] cursor-pointer">
+            </a>
+            <!-- LinkedIn Icon -->
+            <a href="https://www.linkedin.com/company/zyon-s-plumbing-and-heating/" target="_blank">
+              <img src="@/assets/LinkedIn2-w.svg" alt="LinkedIn Logo" class="h-5 md:h-[30px] cursor-pointer">
+            </a>
           </div>
         </div>
         <div class="space-y-5 pt-6 md:pt-20">
@@ -34,7 +43,7 @@
         </div>
         <div class="space-y-5 pt-6 md:pt-20">
           <h1 class="font-bold text-[#FFFFFF] text-base text-left">QUICK LINKS</h1>
-          <div class="space-y-2">
+          <div class="space-y-4">
 
             <router-link to="/"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">Home</p></router-link>
             <router-link to="/about"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">About</p></router-link>

@@ -12,7 +12,10 @@ export default {
   name: 'ContactUs',
   components: {
     ContactComponent
-  }
+  },
+  mounted() {
+    window.scrollTo(0, 0); // Forces the scroll to the top
+  },
   
 };
 </script>

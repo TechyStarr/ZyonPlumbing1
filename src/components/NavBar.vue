@@ -3,9 +3,9 @@
     <!-- Combined Navbar with logo, contact info, and navigation links -->
     <nav class="fixed w-full top-0 left-0 z-50 overflow-x-hidden">
       <!-- Top Navbar Section -->
-      <div class="bg-white border-b border-gray-300 px-4 md:px-24 py-2 md:py-4 flex justify-between items-center font-sans">
+      <div class="bg-white border-b border-gray-300 px-4 md:px-24 py-2 md:py-2 flex justify-between items-center font-sans">
         <div class="flex items-center">
-          <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-12 md:h-24 mr-3">
+          <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-12 md:h-20 mr-3">
         </div>
         <div class="hidden md:flex space-x-8">
           <!-- Email group -->

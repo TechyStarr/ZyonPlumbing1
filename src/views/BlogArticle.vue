@@ -11,20 +11,33 @@
 import BlogArticleComponent from '@/components/article/BlogArticleComponent.vue';
 
 export default {
-  name: 'BlogArticle',
+  name: 'BlogArticleView',
   components: {
     BlogArticleComponent
   },
   data() {
     return {
-      article: null
-    }
+      article: null,
+    };
   },
   created() {
-    const articleId = this.$route.params.id;
-    this.article = this.fetchArticleById(articleId);
+    this.loadArticle();
+  },
+  mounted() {
+    window.scrollTo(0, 0); // Forces the scroll to the top
+  },
+  watch: {
+    '$route.params.id': 'loadArticle',
   },
   methods: {
+    loadArticle() {
+      const articleId = this.$route.params.id;
+      this.article = this.fetchArticleById(articleId);
+      if (!this.article) {
+        // Handle case when article is not found, like redirecting to a 404 page
+        this.$router.push('/not-found');
+      }
+    },
     fetchArticleById(id) {
       const articles = [
         {
@@ -32,6 +45,7 @@ export default {
           title: 'The Benefits of Regular Plumbing Maintenance',
           date: 'JULY 13, 2024',
           image: 'Frame-1.png',
+          category: 'Maintenance',
           content: `
             <p>Plumbing issues can be a real nightmare. From leaky faucets to burst pipes, these problems can cause chaos, damage, and disruption to our daily lives. But here's the thing: many of these issues can be prevented with regular plumbing maintenance.</p>
             <p class="pt-6">Think about it, when was the last time you had your plumbing system checked? If you're like most of us, you probably only think about plumbing when something goes wrong. But by then, it's often too late. Water damage, mold growth, and costly repairs can be the result of neglecting your plumbing system.</p>
@@ -53,6 +67,7 @@ export default {
           title: 'Signs Your Home Needs Repiping: What to Look For',
           date: 'JULY 24, 2024',
           image: 'Frame3.png',
+          category: 'Maintenance',
           content: `
                     <p>Imagine this: you're relaxing in a hot shower, and suddenly, a geyser erupts from behind the wall. Not exactly the picture of home comfort, right? Unfortunately, this scenario (or variations of it) can become a reality if your home's plumbing system is nearing the end of its lifespan. Here's the thing: pipes, like most things in life, don't last forever.</p>
                     <p class="pt-6">While they silently transport water throughout your home, there are subtle signs that can warn you of potential trouble brewing beneath the surface. Here's how to know if your home might be whispering (or maybe even shouting) that it's time for a repiping:</p>
@@ -75,6 +90,7 @@ export default {
           title: 'Top questions to ask when hiring a plumber',
           date: 'AUGUST 1, 2024',
           image: 'Frame-8.png',
+          category: 'tips',
           content: `<p>Are you tired of dealing with leaky faucets, clogged drains, and toilets that just won't flush? It's time to call in the professionals! But, with so many plumbers out there, how do you know who to trust?</p>
             <p>Asking the right questions can make all the difference. Here are the top questions to ask when hiring a plumber, so you can avoid getting drained (pun intended)!</p>
 
@@ -110,6 +126,7 @@ export default {
           title: 'How to choose the best plumbing fixtures for your bathroom remodel',
           date: 'JULY 27, 2024',
           image: 'Frame-8.png',
+          category: 'Bathroom',
           content: `
             <p>Imagine stepping into a bathroom that's the epitome of relaxation and style. The perfect plumbing fixtures can make all the difference - but with so many options, where do you start?</p>
             <p>Don't worry, we've got you covered! In this article, we'll dive into the top tips for choosing the best plumbing fixtures for your bathroom remodel.</p>
@@ -137,6 +154,7 @@ export default {
           title: '5 DIY plumbing fixes you can tackle yourself (safely!)',
           date: 'JULY 27, 2024',
           image: 'Frame-7.png',
+          category: 'tips',
           content: `
             <p>Hey there, fellow homeowners! Plumbing issues can be a real pain. But, before you call in the professionals, why not try tackling some of these common fixes yourself? Not only will you save some cash, but you'll also feel like a total boss.</p>
             <p>Just remember: safety first!</p>
@@ -203,6 +221,7 @@ export default {
           title: 'How to prevent and clear clogged drains',
           date: 'JULY 27, 2024',
           image: 'Frame-2.png',
+          category: 'tips',
           content: `
             <p>Hey there, friends! Let's talk about something that's probably happened to all of us at some point: clogged drains. Ugh, they're the worst! But don't worry, I've got some tips and tricks to share with you on how to prevent them and clear them when they do happen.</p>
 
@@ -241,6 +260,7 @@ export default {
           title: 'How to prevent and clear clogged drains',
           date: 'JULY 27, 2024',
           image: 'Frame-2.png',
+          category: 'Repairs',
           content: `
             <p>Hey there, friends! Let's talk about something that's probably happened to all of us at some point: clogged drains. Ugh, they're the worst! But don't worry, I've got some tips and tricks to share with you on how to prevent them and clear them when they do happen.</p>
 
@@ -279,6 +299,7 @@ export default {
           title: 'What to expect during a home repiping project',
           date: 'JULY 27, 2024',
           image: 'Frame-4.png',
+          category: 'tips',
           content: `
             <p>Hey there, homeowners! Are you tired of dealing with leaky pipes, low water pressure, and rusty water? Well, it might be time to consider a home repiping project. But, what does that even entail? Don't worry, I've got you covered! In this post, we'll walk through what to expect during a home repiping project, so you can be prepared for the process.</p>
 
@@ -302,6 +323,7 @@ export default {
           title: 'How repiping can improve your home’s water quality',
           date: 'JULY 27, 2024',
           image: 'Frame-4.png',
+          category: 'tips',
           content: `
             <h2>The Hidden Dangers of Old Pipes: How Repiping Can Improve Your Water Quality</h2>
 
@@ -332,6 +354,7 @@ export default {
           title: 'Protecting your home from lead contamination',
           date: 'JULY 27, 2024',
           image: 'Frame-6.png',
+          category: 'tips',
           content: `
             <h2>Lead Contamination: Let's Talk About It</h2>
 

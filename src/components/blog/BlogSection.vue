@@ -74,14 +74,14 @@ export default {
           title: 'Top questions to ask when hiring a plumber',
           date: 'AUGUST 1, 2024',
           image: 'image-14.png',
-          category: 'Maintenance'
+          category: 'Tips'
         },
         {
           id: '4',
           title: 'How to choose the best plumbing fixtures for your bathroom remodel',
           date: 'JULY 24, 2024',
           image: 'image14-1.png',
-          category: 'Maintenance'
+          category: 'Bathroom'
         },
         // Add more articles here
       ]

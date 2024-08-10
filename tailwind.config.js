@@ -22,8 +22,11 @@ module.exports = {
         nunito: ['Nunito', 'sans-serif'],
 
       },
+      spacing: {
+        'header-margin': '165px',
+      },
       padding: {
-        // '19': '76px',
+        // '19': '76px',1
       },
       colors: {
         customGold: '#BA8C2A',

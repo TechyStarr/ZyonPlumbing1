@@ -16,8 +16,11 @@ export default {
     console.log('About.vue created');
   },
   mounted() {
+    window.scrollTo(0, 0); // Forces the scroll to the top
     console.log('About.vue mounted');
+
   },
+  
 };
 </script>
 

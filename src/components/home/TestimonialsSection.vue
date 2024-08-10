@@ -86,7 +86,7 @@
                 [
                     {
                         image1: require('@/assets/Ellipse-2.png'),
-                        name: 'Michael D.',
+                        name: 'Daniel Smith.',
                         image2: require('@/assets/Frame-321316190.png'),
                         text: '“We woke up to a cold shower one morning and realized our water heater was on the fritz. Zyons came highly recommended by a friend, so I gave them a call. They were able to diagnose the problem quickly and explained everything clearly. They offered both repair and replacement options, and we opted for a new water heater. Thanks, Zyon!”'
                     },
@@ -100,13 +100,13 @@
                 [
                     {
                         image1: require('@/assets/Ellipse-2.png'),
-                        name: 'Love D.',
+                        name: 'Lovelyn Henshaw',
                         image2: require('@/assets/Frame-321316190.png'),
                         text: '“We woke up to a cold shower one morning and realized our water heater was on the fritz. Zyons came highly recommended by a friend, so I gave them a call. They were able to diagnose the problem quickly and explained everything clearly. They offered both repair and replacement options, and we opted for a new water heater. Thanks, Zyon!”'
                     },
                     {
                         image1: require('@/assets/Ellipse-3.png'),
-                        name: 'Katherine D.',
+                        name: 'Donald Will',
                         image2: require('@/assets/Frame-321316190.png'),
                         text: '"Zyons Plumbing saved the day! My kitchen sink decided to overflow just before a dinner party. I called Zyon in a panic, and they were able to send a technician out within the hour. He was friendly, professional, and had the clog cleared in no time. I was so impressed with their responsiveness and expertise. They definitely saved my dinner party and my sanity!"'
                     }

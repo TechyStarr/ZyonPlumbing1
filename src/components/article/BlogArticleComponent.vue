@@ -1,6 +1,6 @@
 <template>
   <div v-if="article">
-    <div class="relative md:mt-[185px]">
+    <div class="relative md:mt-header-margin">
       <img v-lazy="require('@/assets/imageblog1.png')" alt="Blog Header Image" class="w-full h-[449px] object-cover">
       <div class="absolute top-64 md:top-20 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
         <h1 class="text-[24px] md:text-[48px] lg:text-[64px] w-[297px] md:w-[800px] lg:w-[1150px] text-center md:text-left font-extrabold leading-tight">
@@ -32,15 +32,15 @@
                   <!-- Copy Link Icon -->
                   <img ref="copyLinkIcon" @click="copyLink" src="@/assets/Link.svg" alt="CopyLink Icon" class="h-5 md:h-[30px] cursor-pointer">
                   <!-- Facebook Icon -->
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_ARTICLE_URL" target="_blank">
+                  <a href="https://www.facebook.com/profile.php?id=61563833889325&mibextid=ZbWKwL" target="_blank">
                     <img src="@/assets/Facebook-b.svg" alt="Facebook Logo" class="h-5 md:h-[30px] cursor-pointer">
                   </a>
                   <!-- Instagram Icon -->
-                  <a href="https://www.instagram.com/" target="_blank">
+                  <a href="Instagram.com/zyonsplumbingandheating" target="_blank">
                     <img src="@/assets/Instagram-b.svg" alt="Instagram Logo" class="h-5 md:h-[30px] cursor-pointer">
                   </a>
                   <!-- LinkedIn Icon -->
-                  <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_ARTICLE_URL" target="_blank">
+                  <a href="https://www.linkedin.com/company/zyon-s-plumbing-and-heating/" target="_blank">
                     <img src="@/assets/LinkedIn2-b.svg" alt="LinkedIn Logo" class="h-5 md:h-[30px] cursor-pointer">
                   </a>
                 </div>
@@ -69,10 +69,10 @@
                   v-for="post in relatedPosts"
                   :key="post.id"
                   :to="{ name: 'BlogArticle', params: { id: post.id } }"
-                  class="flex space-x-3"
+                  class="flex space-x-3 hover:text-customGold"
                 >
                   <img v-lazy="require(`@/assets/${post.image}`)" alt="Related Post Image" class="w-[112px] h-[101px] rounded-[10px]">
-                  <div class="space-y-2">
+                  <div class="md:space-y-2">
                     <p class="text-left w-[205px]  pb-6">{{ post.title }}</p>
                     <p class="text-[14px] text-left text-[#454545] mt-2">{{ post.date }}</p>
                   </div>
@@ -85,11 +85,24 @@
                 <h1 class="font-extrabold text-[18px]">CATEGORIES</h1>
               </div>
               <div class="space-y-4 mt-4">
-                <div class="flex items-center space-x-3" v-for="category in categories" :key="category">
-                  <img src="@/assets/chevron-right.png" alt="Chevron Icon" class="h-5">
-                  <p class="text-left text-foundationGreyDarker">{{ category }}</p>
+                <div v-for="category in categories" :key="category.name">
+                  <div class="flex items-center space-x-3 cursor-pointer" @click="toggleCategory(category)">
+                    <img src="@/assets/chevron-right.png" alt="Chevron Icon" class="h-5 transform" :class="{ 'rotate-90': category.isOpen }">
+                    <p class="text-left text-foundationGreyDarker">{{ category.name }}</p>
+                  </div>
+                  <div v-if="category.isOpen" class="ml-8 mt-2 space-y-2">
+                    <router-link 
+                      v-for="article in category.articles" 
+                      :key="article.id" 
+                      :to="{ name: 'BlogArticle', params: { id: article.id } }" 
+                      class="block text-foundationGreyDarker hover:text-blue-600 text-left text-[14px]"
+                    >
+                      {{ article.title }}
+                    </router-link>
+                  </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -99,12 +112,25 @@
               <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
               <h1 class="font-extrabold text-[18px] md:text-[32px]">CATEGORIES</h1>
             </div>
-            <div class="space-y-4">
+            <!-- <div class="space-y-4">
               <div class="flex items-center space-x-3" v-for="category in categories" :key="category">
                 <img src="@/assets/chevron-right.png" alt="Chevron Icon" class="h-5">
                 <p class="text-left text-foundationGreyDarker">{{ category }}</p>
               </div>
-            </div>
+            </div> -->
+            <div class="space-y-4 mt-4">
+                <div v-for="category in categories" :key="category.name">
+                  <div class="flex items-center space-x-3 cursor-pointer" @click="toggleCategory(category)">
+                    <img src="@/assets/chevron-right.png" alt="Chevron Icon" class="h-5 transform" :class="{ 'rotate-90': category.isOpen }">
+                    <p class="text-left text-foundationGreyDarker">{{ category.name }}</p>
+                  </div>
+                  <div v-if="category.isOpen" class="ml-8 mt-2 space-y-2">
+                    <router-link v-for="article in category.articles" :key="article.id" :to="{ name: 'BlogArticle', params: { id: article.id } }" class="block text-foundationGreyDarker hover:text-customGold text-left text-[14px]">
+                      - {{ article.title }}
+                    </router-link>
+                  </div>
+                </div>
+              </div>
           </div>
           <div class="space-y-6 mt-24">
             <div class="flex space-x-5 items-center">
@@ -116,10 +142,10 @@
                 v-for="post in relatedPosts"
                 :key="post.id"
                 :to="{ name: 'BlogArticle', params: { id: post.id } }"
-                class="flex space-x-3"
+                class="flex space-x-3 hover:text-customGold"
               >
                 <img v-lazy="require(`@/assets/${post.image}`)" alt="Related Post Image" class="w-[112px] h-[101px] rounded-[10px]">
-                <div class="space-y-2">
+                <div class="md:space-y-2">
                   <p class="text-left w-[205px]">{{ post.title }}</p>
                   <p class="text-[14px] text-left text-[#454545]">{{ post.date }}</p>
                 </div>
@@ -176,6 +202,9 @@ export default {
   components: {
     ToastNotification,
   },
+  mounted() {
+    window.scrollTo(0, 0); // Forces the scroll to the top
+  },
   props: {
     article: {
       type: Object,
@@ -183,20 +212,56 @@ export default {
     }
   },
   data() {
-    return {
-      tags: ['Bathroom', 'Cleaning', 'Tips', 'Maintenance', 'Repiping'],
-      categories: ['Maintenance', 'Tips', 'Repairs', 'Bathroom', 'Heating'],
-      relatedPosts: [
-        { id: 7, image: 'Rectangle1.png', title: 'What to Expect During a Home Repiping Project', date: 'JULY 27, 2024' },
-        { id: 8, image: 'Rectangle1-1.png', title: "How Repiping Can Improve Your Home's Water Quality", date: 'JULY 27, 2024' },
-        { id: 9, image: 'Rectangle1-2.png', title: 'Protecting Your Home from Lead Contamination', date: 'JULY 27, 2024' },
-        { id: 4, image: 'Rectangle1-3.png', title: 'What to Expect During a Home Repiping Project', date: 'JULY 13, 2024' },
-      ],
-      name: '',
-      email: '',
-      message: '',
-    };
-  },
+  return {
+    tags: ['Bathroom', 'Cleaning', 'Tips', 'Maintenance', 'Repiping'],
+    categories: [
+      {
+        name: 'Maintenance',
+        articles: [
+          { id: 1, title: 'The Benefits of Regular Plumbing Maintenance',},
+          { id: 2, title: 'How to Keep Your Plumbing in Top Shape' }
+        ],
+        isOpen: false
+      },
+      {
+        name: 'Tips',
+        articles: [
+          { id: 3, title: 'Top questions to ask when hiring a plumber', category: 'tips',},
+          { id: 5, title: '5 DIY plumbing fixes you can tackle yourself (safely!)',},
+          { id: 6, title: 'How to prevent and clear clogged drains', category: 'tips',},
+          { id: 8, title: 'How repiping can improve your home’s water quality', category: 'tips',},
+          { id: 9, title: 'Protecting your home from lead contamination', date: 'JULY 27, 2024', image: 'Frame-6.png', category: 'tips',},
+        ],
+        isOpen: false
+      },
+      {
+        name: 'Repair',
+        articles: [
+      { id: 7, title: 'What to expect during a home repiping project', category: 'tips',},
+        ],
+        isOpen: false
+      },
+      {
+      name: 'Bathroom',
+        articles: [
+          { id: 4, title: 'How to choose the best plumbing fixtures for your bathroom remodel', category: 'Bathroom',},
+        ],
+        isOpen: false
+
+      }
+      // Add other categories in a similar fashion
+    ],
+    relatedPosts: [
+      { id: 7, image: 'Rectangle1.png', title: 'What to Expect During a Home Repiping Project', date: 'JULY 27, 2024' },
+      { id: 8, image: 'Rectangle1-1.png', title: "How Repiping Can Improve Your Home's Water Quality", date: 'JULY 27, 2024' },
+      { id: 9, image: 'Rectangle1-2.png', title: 'Protecting Your Home from Lead Contamination', date: 'JULY 27, 2024' },
+      // { id: 4, image: 'Rectangle1-3.png', title: 'Understanding Galvanized Steel Pipes', date: 'JULY 13, 2024' },
+    ],
+    name: '',
+    email: '',
+    message: '',
+  };
+},
   computed: {
     headerImage() {
       return this.article ? require(`@/assets/${this.article.image}`) : '';
@@ -231,7 +296,15 @@ export default {
       }).catch(err => {
         console.error('Could not copy text: ', err);
       });
+    },
+    toggleCategory(category) {
+    category.isOpen = !category.isOpen;
+    
+    if (category.isOpen && category.articles.length > 0) {
+      // this.$router.push({ name: 'BlogArticle', params: { id: category.articles[0].id } });
+      console.log('Opened')
     }
+  },
   }
 };
 </script>

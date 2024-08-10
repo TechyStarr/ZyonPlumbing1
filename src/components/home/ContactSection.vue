@@ -25,9 +25,21 @@
         </div>
         <p class="text-[16px] text-left font-nunito hidden md:block">MON - FRI : 8 AM - 4 PM, SUN - SAT (Closed)</p>
         <div class="text-left flex items-center space-x-5 hidden md:flex">
-          <img v-lazy="require('@/assets/Facebook-b.svg')" alt="Phone icon" class="h-6">
+          <!-- <img v-lazy="require('@/assets/Facebook-b.svg')" alt="Phone icon" class="h-6">
           <img v-lazy="require('@/assets/Instagram-b.svg')" alt="Phone icon" class="h-6">
-          <img v-lazy="require('@/assets/LinkedIn2-b.svg')" alt="Phone icon" class="h-6">
+          <img v-lazy="require('@/assets/LinkedIn2-b.svg')" alt="Phone icon" class="h-6"> -->
+          <!-- Facebook Icon -->
+          <a href="https://www.facebook.com/profile.php?id=61563833889325&mibextid=ZbWKwL" target="_blank">
+            <img src="@/assets/Facebook-b.svg" alt="Facebook Logo" class="h-5 md:h-[30px] cursor-pointer">
+          </a>
+          <!-- Instagram Icon -->
+          <a href="Instagram.com/zyonsplumbingandheating" target="_blank">
+            <img src="@/assets/Instagram-b.svg" alt="Instagram Logo" class="h-5 md:h-[30px] cursor-pointer">
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="https://www.linkedin.com/company/zyon-s-plumbing-and-heating/" target="_blank">
+            <img src="@/assets/LinkedIn2-b.svg" alt="LinkedIn Logo" class="h-5 md:h-[30px] cursor-pointer">
+          </a>
         </div>
       </div>
       <ContactForm />

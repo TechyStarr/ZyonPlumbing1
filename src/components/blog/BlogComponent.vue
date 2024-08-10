@@ -1,6 +1,5 @@
 <template>
   <div id="blog">
-    <Navbar />
     <BlogHeaderSection />
     <BlogSection />
   </div>

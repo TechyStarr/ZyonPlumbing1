@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Navbar />
     <BlogComponent />
   </div>
 </template>
@@ -13,7 +12,11 @@ export default {
   name: 'BlogView',
   components: {
     BlogComponent
-  }
+  },
+  mounted() {
+    window.scrollTo(0, 0); // Forces the scroll to the top
+  },
+  
 }
 </script>
 

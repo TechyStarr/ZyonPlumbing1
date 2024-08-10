@@ -6,7 +6,7 @@
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex justify-center item-center">
       <div v-for="article in displayedArticles" :key="article.id" class="mt-6 md:mt-12 space-y-2 text-left">
         <div class="relative w-[335px] md:w-[387px] h-[289px]">
           <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded object-cover">

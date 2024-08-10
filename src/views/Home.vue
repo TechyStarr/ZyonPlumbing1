@@ -16,6 +16,7 @@ export default {
     console.log('Home.vue created');
   },
   mounted() {
+    window.scrollTo(0, 0); // Forces the scroll to the top
     console.log('Home.vue mounted');
   },
 };
