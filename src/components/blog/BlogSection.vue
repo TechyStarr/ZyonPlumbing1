@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full rounded mt-18 bg-gray-100 pt-12 p-6 md:p-12">
+  <div ref="blogSection" class="w-full rounded mt-18 bg-gray-100 pt-12 p-6 md:p-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       <h1 class="font-extrabold text-[18px] md:text-[32px]">READ LATEST NEWS</h1>
@@ -50,6 +50,11 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: 'BlogSection',
   data() {
@@ -86,6 +91,19 @@ export default {
         // Add more articles here
       ]
     }
+  },
+  mounted() {
+    gsap.from(this.$refs.blogSection, {
+      y: 100,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: this.$refs.blogSection,
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
   }
 }
 </script>

@@ -5,7 +5,9 @@
       <!-- Top Navbar Section -->
       <div class="bg-white border-b border-gray-300 px-4 md:px-24 py-2 md:py-2 flex justify-between items-center font-sans">
         <div class="flex items-center">
-          <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-12 md:h-20 mr-3">
+          <router-link class="" to="/">
+            <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-12 md:h-20 mr-3">
+          </router-link>
         </div>
         <div class="hidden md:flex space-x-8">
           <!-- Email group -->
@@ -65,7 +67,9 @@
       <div v-if="menuOpen" class="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex justify-start overflow-x-hidden">
         <div class="bg-white w-64 h-full p-6 overflow-x-hidden">
           <div class="flex justify-between items-center mb-8">
-            <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-16">
+            <router-link class="" to="/">
+              <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-16">
+            </router-link>
             <button @click="toggleMenu" class="focus:outline-none absolute right-4 top-4 z-50">
               <img v-lazy="require('@/assets/x-close.svg')" alt="Close Icon" class="h-8">
             </button>

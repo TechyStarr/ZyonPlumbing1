@@ -1,6 +1,6 @@
 <template>
   <div class="w-full space-y-12 bg-foundationGoldLightActive mt-[70px] md:mt-[170px] px-4 md:px-12 py-12 md:p-12">
-    <div class="space-y-6">
+    <div ref="missionSection" class="space-y-6">
       <div class="flex space-x-5 items-center">
         <hr class="w-[50px] border-t-[3px] border-gray-400">
         <h1 class="font-extrabold text-[18px] md:text-[32px]">MISSION STATEMENT</h1>
@@ -11,7 +11,7 @@
       </p>
     </div>
 
-    <div class="space-y-6">
+    <div ref="whyChooseUsSection" class="space-y-6">
       <div class="flex space-x-5 items-center">
         <hr class="w-[50px] border-t-[3px] border-gray-400">
         <h1 class="font-extrabold text-[18px] md:text-[32px]">WHY CHOOSE US</h1>
@@ -34,13 +34,40 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: 'MissionSection',
-  created() {
-    console.log('MissionSection.vue created');
-  },
   mounted() {
-    console.log('MissionSection.vue mounted');
+    const missionSection = this.$refs.missionSection;
+    const whyChooseUsSection = this.$refs.whyChooseUsSection;
+
+    gsap.from(missionSection, {
+      y: 50, // Start position (50px below its natural position)
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: missionSection,
+        start: "top 80%", // Adjust this as needed
+        toggleActions: "play none none none",
+      },
+    });
+
+    gsap.from(whyChooseUsSection, {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: whyChooseUsSection,
+        start: "top 80%", 
+        toggleActions: "play none none none",
+      },
+    });
   },
 };
 </script>

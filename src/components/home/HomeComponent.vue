@@ -8,7 +8,6 @@
     <news-section />
     <faqs-section />
     <contact-section />
-    <footer-section />
   </div>
 </template>
 

@@ -1,24 +1,23 @@
 <template>
-  <div class="w-full mt-[0px] md:mt-[60px] lg:mt-18 py-12 px-2 md:px-6 lg:px-12">
-    <div class="flex space-x-5 items-center ml-8 md:ml-24 mb-8">
-      <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
-      <h1 class="font-extrabold text-[18px] lg:text-[32px]">OUR RECENT PROJECTS</h1>
-    </div>
-
+  <div class="w-full mt-[0px] md:mt-[60px] lg:mt-18 py-12">
     <!-- Desktop/Tablet View -->
-    <div class="hidden md:block my-12 mx-24 justify-center align-center items-center">
-      <div class="flex space-x-4">
-        <img v-lazy="require('@/assets/Frame-48.png')" alt="Check square" class="w-[393px] h-[508px]">
+    <div class="hidden md:flex flex-col items-center my-12">
+      <div class="flex space-x-5 items-center ml-8 md:ml-24 mb-8">
+        <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
+        <h1 class="font-extrabold text-[18px] lg:text-[32px]">OUR RECENT PROJECTS</h1>
+      </div>
+      <div class="flex space-x-4 project-img" ref="projectImages">
+        <img v-lazy="require('@/assets/Frame-48.png')" alt="Project 1" class="w-[393px] h-[508px]">
         <div class="space-y-2">
-          <img v-lazy="require('@/assets/Frame-45.png')" alt="Check square" class="w-[418px] h-[250px]">
-          <img v-lazy="require('@/assets/Frame-50.png')" alt="Check square" class="w-[418px] h-[250px]">
+          <img v-lazy="require('@/assets/Frame-45.png')" alt="Project 2" class="w-[418px] h-[250px]">
+          <img v-lazy="require('@/assets/Frame-50.png')" alt="Project 3" class="w-[418px] h-[250px]">
         </div>
-        <img v-lazy="require('@/assets/Frame-44.png')" alt="Check square" class="w-[314px] h-[509px]">
+        <img v-lazy="require('@/assets/Frame-44.png')" alt="Project 4" class="w-[314px] h-[509px]">
       </div>
       <div class="flex space-x-4 mt-2">
-        <img v-lazy="require('@/assets/Frame-51.png')" alt="Check square" class="w-[393px] h-[250px]">
-        <img v-lazy="require('@/assets/Frame-52.png')" alt="Check square" class="w-[418px] h-[250px]">
-        <img v-lazy="require('@/assets/Frame-53.png')" alt="Check square" class="w-[314px] h-[250px]">
+        <img v-lazy="require('@/assets/Frame-51.png')" alt="Project 5" class="w-[393px] h-[250px]">
+        <img v-lazy="require('@/assets/Frame-52.png')" alt="Project 6" class="w-[418px] h-[250px]">
+        <img v-lazy="require('@/assets/Frame-53.png')" alt="Project 7" class="w-[314px] h-[250px]">
       </div>
     </div>
 
@@ -50,6 +49,11 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: 'AboutUsSection',
   data() {
@@ -67,6 +71,13 @@ export default {
       slideInterval: null,
     };
   },
+  mounted() {
+    this.startAutoSlide();
+    this.animateImages();
+  },
+  beforeUnmount() {
+    this.stopAutoSlide();
+  },
   methods: {
     prevImage() {
       this.currentIndex = (this.currentIndex === 0) ? this.mobileImages.length - 1 : this.currentIndex - 1;
@@ -83,12 +94,19 @@ export default {
     stopAutoSlide() {
       clearInterval(this.slideInterval);
     },
-  },
-  mounted() {
-    this.startAutoSlide();
-  },
-  beforeUnmount() {
-    this.stopAutoSlide();
+    animateImages() {
+      const images = this.$refs.projectImages.querySelectorAll('img');
+      gsap.from(images, {
+        scale: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: images,
+          start: "top 80%",
+        }
+      });
+    }
   },
 };
 </script>

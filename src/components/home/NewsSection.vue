@@ -1,38 +1,36 @@
 <template>
-  <div class="w-full h-auto rounded mt-18 bg-gray-100 p-6 md:p-12">
+  <div class="w-full justify-center items-center h-auto rounded mt-18 bg-gray-100 py-6 md:py-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       <h1 class="font-extrabold text-[18px] md:text-[24px] lg:text-[32px] text-foundationGreyDarker">READ LATEST NEWS</h1>
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 flex justify-center item-center">
-      <div v-for="article in displayedArticles" :key="article.id" class="mt-6 md:mt-12 space-y-2 text-left">
-        <div class="relative w-[335px] md:w-[387px] h-[289px]">
-          <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded object-cover">
-          <p class="absolute top-2 left-2 bg-foundationGoldNormal text-white font-bold py-2 px-4 rounded-full">
-            {{ article.category }}
-          </p>
-        </div>
-        <h1 class="font-semibold text-[18px] text-foundationGreyNormal">{{ article.date }}</h1>
-        <router-link class="font-semibold text-[18px] hover:text-customGold" :to="`/blog/${article.id}`">
-          {{ article.title }}
-        </router-link>
-        <div class="flex space-x-3">
-          <p class="text-[18px] text-foundationGoldDarker font-nunito">Read More</p>
-          <img v-lazy="require('@/assets/chevron-right.png')" alt="Check square" class="h-6">
+    <div class="flex justify-center ">
+      <div class="max-w-screen-lg max-w-screen-sm w-full flex justify-center gap-4">
+        <div v-for="article in displayedArticles" :key="article.id" class="mt-6 md:mt-12 space-y-2 text-left article-container">
+          <div class="relative w-[335px] md:w-[387px] h-[289px]">
+            <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded object-cover">
+            <p class="absolute top-2 left-2 bg-foundationGoldNormal text-white font-bold py-2 px-4 rounded-full">
+              {{ article.category }}
+            </p>
+          </div>
+          <h1 class="font-semibold text-[18px] text-foundationGreyNormal">{{ article.date }}</h1>
+          <router-link class="font-semibold w-[357px] text-[18px] hover:text-customGold" :to="`/blog/${article.id}`">
+            {{ article.title }}
+          </router-link>
+          <div class="flex space-x-3">
+            <p class="text-[18px] text-foundationGoldDarker font-nunito">Read More</p>
+            <img v-lazy="require('@/assets/chevron-right.png')" alt="Check square" class="h-6">
+          </div>
         </div>
       </div>
     </div>
+
     <router-link to="/blog">
-      <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mt-8">
+      <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mt-12">
         View Articles
       </button>
     </router-link>
-
-    <!-- <button  class="w-[190px] h-[60px] mt-12 bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
-      View Articles
-    </button> -->
   </div>
 </template>
 
@@ -89,5 +87,16 @@ export default {
 </script>
 
 <style scoped>
-/* Add any necessary styles here */
+/* Adjust the article container on mobile */
+.article-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Set the width to 100% on mobile */
+}
+
+@media (max-width: 768px) {
+  .article-container {
+    max-width: 335px; /* or whatever the width of your article should be on mobile */
+  }
+}
 </style>

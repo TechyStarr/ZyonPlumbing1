@@ -10,26 +10,34 @@
       <h1 class="font-extrabold text-[32px] text-foundationGreyDarker">FAQs</h1>
     </div>
 
-    <div v-for="(faq, index) in faqs" :key="index" class="w-full my-2 md:my-8">
-      <div @click="toggleFaq(index)" class="w-full h-[65px] mb-6 px-4 md:px-8 flex justify-between items-center rounded bg-foundationGreyLight cursor-pointer">
-        <p class="text-[14px] md:text-[16px] font-semibold text-foundationGreyDarker text-left">{{ faq.question }}</p>
-        <img v-lazy="faq.icon" :class="{'rotate-90': faq.open, 'rotate-0': !faq.open}" class="h-8 transition-transform duration-200">
-      </div>
-      <div v-if="faq.open" class="w-full rounded px-4 md:px-8 py-2 md:py-4 bg-fountActive">
-        <p class="text-[14px] md:text-[16px] text-left font-semibold mb-8">{{ faq.answer }}</p>
-      </div>
+    <div v-for="(faq, index) in faqs" :key="index" ref="faqSections" class="w-full my-2 md:my-8 faq-section">
+      <transition name="slide-fade">
+        <div @click="toggleFaq(index)" class="w-full h-[65px] mb-6 px-4 md:px-8 flex justify-between items-center rounded bg-foundationGreyLight cursor-pointer">
+          <p class="text-[14px] md:text-[16px] font-semibold text-foundationGreyDarker text-left">{{ faq.question }}</p>
+          <img v-lazy="faq.icon" :class="{'rotate-90': faq.open, 'rotate-0': !faq.open}" class="h-8 transition-transform duration-200">
+        </div>        
+      </transition>
+
+      <transition name="slide-fade">
+        <div v-if="faq.open" class="w-full rounded px-4 md:px-8 py-2 md:py-4 bg-fountActive">
+          <p class="text-[14px] md:text-[16px] text-left font-semibold mb-8">{{ faq.answer }}</p>
+        </div>
+      </transition>
     </div>
     <div class="relative hidden md:block md:-right-[600px]">
       <div class="absolute w-[3] h-[150px] -top-[22px]">
         <img v-lazy="require('@/assets/Question-Mark1.png')" alt="Question Mark Image" class="w-full h-full rounded-[10px] object-cover">
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChevronRightIcon from '@/assets/chevron-circle.svg';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'FaqSection',
@@ -63,6 +71,25 @@ export default {
       ]
     };
   },
+  mounted() {
+    const faqSections = this.$refs.faqSections;
+
+    if (faqSections && faqSections.length) {
+      faqSections.forEach((section, index) => {
+        gsap.from(section, {
+          y: 50, // Move in from bottom
+          opacity: 0,
+          duration: 1.2,
+          delay: index * 0.2,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+    }
+  },
   methods: {
     toggleFaq(index) {
       this.faqs.forEach((faq, i) => {
@@ -85,5 +112,12 @@ export default {
 }
 .bg-foundationGreyLightActive {
   background-color: #f0f0f0;
+}
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: all 0.5s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
 }
 </style>

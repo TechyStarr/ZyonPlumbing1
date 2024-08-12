@@ -1,7 +1,7 @@
 <template>
-  <div class="relative md:mt-[175px]">
+  <div class="relative md:mt-header-margin">
     <img v-lazy="currentImage" alt="Header Image" class="w-full h-[692px] md:h-[843px] object-cover">
-    <div class="absolute top-48 md:top-40 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
+    <div ref="textContent" class="absolute top-48 md:top-40 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
       <h1 class="text-[32px] md:text-[64px] w-full md:w-[720px] text-center md:text-left font-extrabold leading-tight">
         We Keep the Water Flowing and the Heat Glowing
       </h1>
@@ -14,16 +14,17 @@
             Contact Us
           </button>
         </router-link>
-
-        <!-- <button class="w-[150px] h-[50px] md:w-[190px] md:h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full">
-          Contact Us
-        </button> -->
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   data() {
     return {
@@ -41,12 +42,25 @@ export default {
   },
   mounted() {
     this.startImageSlideshow();
+    this.animateTextContent();
   },
   methods: {
     startImageSlideshow() {
       setInterval(() => {
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
       }, 5000);
+    },
+    animateTextContent() {
+      gsap.from(this.$refs.textContent, {
+        x: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: this.$refs.textContent,
+          start: "top 80%",
+        }
+      });
     }
   }
 };

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-for="(section, index) in sections" :key="index" class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-[70px] px-4 md:px-32">
+    <div v-for="(section, index) in sections" :key="index" ref="sections" class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-[70px] px-4 md:px-32">
       <h1 class="text-[64px] text-[#E9E0CC] mt- md:mt-0 md:order-1 font-extrabold leading-tight text-center w-full md:w-auto">
         {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
       </h1>
@@ -18,6 +18,11 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default {
   name: 'ServicesSection',
   data() {
@@ -73,6 +78,26 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    const sections = this.$refs.sections;
+
+    // Ensure sections is an array
+    if (Array.isArray(sections)) {
+      sections.forEach((section, index) => {
+        gsap.from(section, {
+          y: 50, // Start position (move in from bottom)
+          opacity: 0, // Start opacity
+          duration: 1.2, // Animation duration
+          delay: index * 0.2, // Stagger the animation for each section
+          scrollTrigger: {
+            trigger: section,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+    }
   }
 };
 </script>
