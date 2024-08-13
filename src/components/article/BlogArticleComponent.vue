@@ -264,9 +264,9 @@ export default {
         }
       ],
       relatedPosts: [
-        { id: 7, image: 'Rectangle1.png', title: 'What to Expect During a Home Repiping Project', date: 'JULY 27, 2024' },
-        { id: 8, image: 'Rectangle1-1.png', title: "How Repiping Can Improve Your Home's Water Quality", date: 'JULY 27, 2024' },
-        { id: 9, image: 'Rectangle1-2.png', title: 'Protecting Your Home from Lead Contamination', date: 'JULY 27, 2024' },
+        { id: 7, image: 'Frame-4.png', title: 'What to Expect During a Home Repiping Project', date: 'JULY 27, 2024' },
+        { id: 8, image: 'Frame-4.png', title: "How Repiping Can Improve Your Home's Water Quality", date: 'JULY 27, 2024' },
+        { id: 9, image: 'Frame-6.png', title: 'Protecting Your Home from Lead Contamination', date: 'JULY 27, 2024' },
       ],
       name: '',
       email: '',
