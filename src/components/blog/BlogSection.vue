@@ -6,7 +6,7 @@
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
     </div>
 
-    <div class="flex font-nunito mt-7 md:mt-12 space-x-2 md:space-x-3 ml-4 md:ml-0 text-[14px] md:text-[16px]">
+    <div class="flex pl-[36px] font-nunito mt-7 md:mt-12 space-x-2 md:space-x-3 ml-4 md:ml-0 text-[14px] md:text-[16px]">
       <p class="w-[44px] md:w-[61px] h-[20px] md:h-[30px] bg-customGold hover:bg-customGold text-white rounded-full flex items-center justify-center">
         All
       </p>

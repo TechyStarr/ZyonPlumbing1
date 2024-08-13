@@ -1,5 +1,5 @@
 <template>
-  <div id="contact" class="overflow-hidden w-full h-auto rounded mt-1 my-36 md:my-0 py-10 md:py-24 px-4 md:px-12">
+  <div id="contact" class="overflow-hidden w-full h-auto rounded mt-1 my-6 md:my-0 py-10 md:py-24 px-4 md:px-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
       <h1 class="font-extrabold text-[18px] md:text-[32px] text-foundationGreyDarker">GET IN TOUCH</h1>
@@ -25,9 +25,6 @@
         </div>
         <p class="text-[16px] text-left font-nunito hidden md:block">MON - FRI : 8 AM - 4 PM, SUN - SAT (Closed)</p>
         <div class="text-left flex items-center space-x-5 hidden md:flex">
-          <!-- <img v-lazy="require('@/assets/Facebook-b.svg')" alt="Phone icon" class="h-6">
-          <img v-lazy="require('@/assets/Instagram-b.svg')" alt="Phone icon" class="h-6">
-          <img v-lazy="require('@/assets/LinkedIn2-b.svg')" alt="Phone icon" class="h-6"> -->
           <!-- Facebook Icon -->
           <a href="https://www.facebook.com/profile.php?id=61563833889325&mibextid=ZbWKwL" target="_blank">
             <img src="@/assets/Facebook-b.svg" alt="Facebook Logo" class="h-5 md:h-[30px] cursor-pointer">
