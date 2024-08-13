@@ -1,6 +1,7 @@
 <template>
   <div class="relative md:mt-header-margin">
-    <img v-lazy="currentImage" alt="Header Image" class="w-full h-[692px] md:h-[843px] object-cover">
+    <SkeletonLoader v-if="!imageLoaded" :width="'100%'" :height="'692px'" :borderRadius="'0'" />
+    <img v-lazy="currentImage" alt="Header Image" class="w-full h-[692px] md:h-[843px] object-cover" @load="onImageLoad" v-show="imageLoaded">
     <div ref="textContent" class="absolute top-48 md:top-40 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
       <h1 class="text-[32px] md:text-[64px] w-full md:w-[720px] text-center md:text-left font-extrabold leading-tight">
         We Keep the Water Flowing and the Heat Glowing
@@ -20,19 +21,24 @@
 </template>
 
 <script>
+import SkeletonLoader from '@/components/SkeletonLoader.vue'; // Adjust the path if necessary
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+  components: {
+    SkeletonLoader
+  },
   data() {
     return {
       images: [
         require('@/assets/header-img.png'),
         require('@/assets/header-img2.png')
       ],
-      currentIndex: 0
+      currentIndex: 0,
+      imageLoaded: false
     };
   },
   computed: {
@@ -47,6 +53,7 @@ export default {
   methods: {
     startImageSlideshow() {
       setInterval(() => {
+        this.imageLoaded = false;
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
       }, 5000);
     },
@@ -61,6 +68,9 @@ export default {
           start: "top 80%",
         }
       });
+    },
+    onImageLoad() {
+      this.imageLoaded = true;
     }
   }
 };

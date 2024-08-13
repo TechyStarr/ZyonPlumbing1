@@ -7,13 +7,13 @@
         <div class="flex items-center">
           <!-- <router-link class="" to="/"> -->
             <router-link to="/" @click="handleLogoClick">
-            <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-12 md:h-20 mr-3">
+            <img v-lazy="require('@/assets/logo.png')" alt="Company Logo" class="h-10 md:h-16 mr-3">
           </router-link>
         </div>
         <div class="hidden md:flex space-x-8">
           <!-- Email group -->
           <div class="flex items-center space-x-3 md:space-x-5">
-            <img v-lazy="require('@/assets/envelope-dots.png')" alt="Email Icon" class="h-8 md:h-12">
+            <img v-lazy="require('@/assets/envelope-dots.png')" alt="Email Icon" class="h-8 md:h-10">
             <div class="text-left">
               <div class="font-bold text-sm md:text-base">EMAIL US</div>
               <div class="text-xs md:text-sm">
@@ -23,7 +23,7 @@
           </div>
           <!-- Phone number group -->
           <div class="flex items-center space-x-3 md:space-x-5">
-            <img v-lazy="require('@/assets/hotline.png')" alt="Phone icon" class="h-8 md:h-11">
+            <img v-lazy="require('@/assets/hotline.png')" alt="Phone icon" class="h-8 md:h-10">
             <div class="text-left">
               <div class="font-bold text-sm md:text-base">CALL US</div>
               <div class="text-xs md:text-sm">
@@ -42,22 +42,22 @@
       </div>
 
       <!-- Bottom Navbar Section for Desktop -->
-      <div class="hidden md:block bg-customGold px-4 md:px-40 py-6">
+      <div class="hidden md:block bg-customGold px-4 md:px-40 py-[22px]">
         <ul class="flex justify-center font-md text-base">
           <li>
-            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-6 border-r border-black hover:bg-black hover:text-white font-sans" to="/" active-class="bg-foundationGreyDarker text-white">Home</router-link>
+            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-[24.5px] border-r border-black hover:bg-black hover:text-white font-sans" to="/" active-class="bg-foundationGreyDarker text-white">Home</router-link>
           </li>
           <li>
-            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-6 border-r border-black hover:bg-black hover:text-white font-sans" to="/about" active-class="bg-foundationGreyDarker text-white">About</router-link>
+            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-[24.5px] border-r border-black hover:bg-black hover:text-white font-sans" to="/about" active-class="bg-foundationGreyDarker text-white">About</router-link>
           </li>
           <li>
-            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-6 border-r border-black hover:bg-black hover:text-white font-sans" to="/services" active-class="bg-foundationGreyDarker text-white">Services</router-link>
+            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-[24.5px] border-r border-black hover:bg-black hover:text-white font-sans" to="/services" active-class="bg-foundationGreyDarker text-white">Services</router-link>
           </li>
           <li>
-            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-6 border-r border-black hover:bg-black hover:text-white font-sans" to="/blog" active-class="bg-foundationGreyDarker text-white">Blog</router-link>
+            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-[24.5px] border-r border-black hover:bg-black hover:text-white font-sans" to="/blog" active-class="bg-foundationGreyDarker text-white">Blog</router-link>
           </li>
           <li>
-            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-6 hover:bg-black hover:text-white font-sans" to="/contact" active-class="bg-foundationGreyDarker text-white">Contact</router-link>
+            <router-link class="nav-link text-black no-underline px-4 md:px-10 py-[24.5px] hover:bg-black hover:text-white font-sans" to="/contact" active-class="bg-foundationGreyDarker text-white">Contact</router-link>
           </li>
         </ul>
       </div>

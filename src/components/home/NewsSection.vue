@@ -17,11 +17,12 @@
           <h1 class="font-semibold text-[18px] text-foundationGreyNormal">{{ article.date }}</h1>
           <router-link class="font-semibold w-[357px] text-[18px] hover:text-customGold" :to="`/blog/${article.id}`">
             {{ article.title }}
+            <div class="flex space-x-3">
+              <p class="text-[18px] text-foundationGoldDarker font-nunito">Read More</p>
+              <img v-lazy="require('@/assets/chevron-right.png')" alt="Check square" class="h-6">
+            </div>            
           </router-link>
-          <div class="flex space-x-3">
-            <p class="text-[18px] text-foundationGoldDarker font-nunito">Read More</p>
-            <img v-lazy="require('@/assets/chevron-right.png')" alt="Check square" class="h-6">
-          </div>
+
         </div>
       </div>
     </div>

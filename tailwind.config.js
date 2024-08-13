@@ -7,15 +7,14 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '480px',
-        'sm': '640px',
+        // 'xs': '480px',
+        // 'sm': '640px',
         'md': '768px',
-        'lg': '1024px',
-        'xl': '1440px',
-        '2xl': '1536px',
-        // Add custom screen sizes if needed
-        '3xl': '1600px',
-        '4xl': '1920px',
+        'lg': '960px',
+        'xl': '1200px',
+        // '2xl': '1536px',
+        // '3xl': '1600px',
+        // '4xl': '1920px',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
@@ -23,7 +22,7 @@ module.exports = {
 
       },
       spacing: {
-        'header-margin': '165px',
+        'header-margin': '140px',
       },
       padding: {
         // '19': '76px',1

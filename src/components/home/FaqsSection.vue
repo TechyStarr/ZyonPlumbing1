@@ -10,7 +10,19 @@
       <h1 class="font-extrabold text-[32px] text-foundationGreyDarker">FAQs</h1>
     </div>
 
-    <div v-for="(faq, index) in faqs" :key="index" ref="faqSections" class="w-full my-2 md:my-8 faq-section">
+    <div v-if="isLoading">
+      <!-- Display Skeleton Loaders while loading -->
+      <SkeletonLoader 
+        v-for="index in 4" 
+        :key="index" 
+        :width="'100%'" 
+        :height="'65px'" 
+        :borderRadius="'8px'" 
+        class="mb-6"
+      />
+    </div>
+
+    <div v-else v-for="(faq, index) in faqs" :key="index" ref="faqSections" class="w-full my-2 md:my-8 faq-section">
       <transition name="slide-fade">
         <div @click="toggleFaq(index)" class="w-full h-[65px] mb-6 px-4 md:px-8 flex justify-between items-center rounded bg-foundationGreyLight cursor-pointer">
           <p class="text-[14px] md:text-[16px] font-semibold text-foundationGreyDarker text-left">{{ faq.question }}</p>
@@ -36,14 +48,25 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ChevronRightIcon from '@/assets/chevron-circle.svg';
+import SkeletonLoader from '@/components/SkeletonLoader.vue'; // Adjust the path as necessary
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
   name: 'FaqSection',
+  components: {
+    SkeletonLoader
+  },
   data() {
     return {
-      faqs: [
+      faqs: [],
+      isLoading: true, // Track loading state
+    };
+  },
+  mounted() {
+    // Simulate data fetching
+    setTimeout(() => {
+      this.faqs = [
         {
           question: "Do you offer emergency plumbing services?",
           answer: "Yes, Zyons Plumbing and Heating understands that plumbing emergencies can happen at any time.  We offer 24/7 emergency plumbing services to address urgent issues like burst pipes or sewer line backups. Don't hesitate to call us day or night for immediate assistance.",
@@ -68,27 +91,28 @@ export default {
           open: false,
           icon: ChevronRightIcon
         }
-      ]
-    };
-  },
-  mounted() {
-    const faqSections = this.$refs.faqSections;
+      ];
 
-    if (faqSections && faqSections.length) {
-      faqSections.forEach((section, index) => {
-        gsap.from(section, {
-          y: 50, // Move in from bottom
-          opacity: 0,
-          duration: 1.2,
-          delay: index * 0.2,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
+      this.isLoading = false; // Set loading to false once data is ready
+
+      // Animate FAQ sections
+      const faqSections = this.$refs.faqSections;
+      if (faqSections && faqSections.length) {
+        faqSections.forEach((section, index) => {
+          gsap.from(section, {
+            y: 50,
+            opacity: 0,
+            duration: 1.2,
+            delay: index * 0.2,
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          });
         });
-      });
-    }
+      }
+    }, 1500); // Simulated loading time
   },
   methods: {
     toggleFaq(index) {

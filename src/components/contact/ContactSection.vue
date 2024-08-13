@@ -32,7 +32,7 @@
           <a href="https://www.facebook.com/profile.php?id=61563833889325&mibextid=ZbWKwL" target="_blank">
             <img src="@/assets/Facebook-b.svg" alt="Facebook Logo" class="h-5 md:h-[30px] cursor-pointer">
           </a>
-          <a href="Instagram.com/zyonsplumbingandheating" target="_blank">
+          <a href="http://instagram.com/zyonsplumbingandheating" target="_blank">
             <img src="@/assets/Instagram-b.svg" alt="Instagram Logo" class="h-5 md:h-[30px] cursor-pointer">
           </a>
           <a href="https://www.linkedin.com/company/zyon-s-plumbing-and-heating/" target="_blank">
