@@ -37,7 +37,7 @@
       </div>
       <div class="space-y-5 lg:space-y-0 pt-6 lg:pt-20">
         <h1 class="font-bold text-[#FFFFFF] text-base text-left">QUICK LINKS</h1>
-        <div class="space-y-4">
+        <div class="space-y-6">
           <router-link to="/"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">Home</p></router-link>
           <router-link to="/about"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">About</p></router-link>
           <router-link to="/services"><p class="text-sm text-left text-[#FFFFFF] hover-text-red">Services</p></router-link>

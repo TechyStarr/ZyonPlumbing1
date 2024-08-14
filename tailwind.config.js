@@ -23,6 +23,7 @@ module.exports = {
       },
       spacing: {
         'header-margin': '140px',
+        'header-margin-md': '185px',
       },
       padding: {
         // '19': '76px',1

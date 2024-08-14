@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative md:mt-header-margin">
+    <div class="relative lg:mt-header-margin">
       <img v-lazy="require('@/assets/image1-2.png')" alt="Header Image" class="w-full h-[449px] object-cover">
       <div ref="servicesText" class="absolute top-48 md:top-40 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
         <h1 class="text-[32px] md:text-[64px] w-full md:w-[720px] text-center md:text-left font-extrabold leading-tight">

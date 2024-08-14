@@ -1,5 +1,5 @@
 <template>
-  <div class="header-container relative z-20 md:mt-header-margin">
+  <div class="header-container relative z-20 lg:mt-header-margin">
     <div class="image-container">
       <img
         v-for="(image, index) in images"
