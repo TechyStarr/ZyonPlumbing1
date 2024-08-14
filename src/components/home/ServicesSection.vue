@@ -1,170 +1,130 @@
 <template>
-    <div class="w-full mt-[0px] md:mt-[60px] lg:mt-18 py-12">
-      <!-- Desktop/Tablet View -->
-      <div class="hidden md:flex flex-col items-center my-12">
-        <div class="flex space-x-5 items-center ml-8 md:ml-24 mb-8">
-          <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
-          <h1 class="font-extrabold text-[18px] lg:text-[32px]">OUR RECENT PROJECTS</h1>
-        </div>
-        <div class="flex space-x-4 project-img" ref="projectImages">
-          <div v-for="(image, index) in images" :key="index" class="relative">
-            <SkeletonLoader v-if="!image.loaded" :width="'393px'" :height="'508px'" />
-            <img 
-              v-lazy="image.src" 
-              :alt="'Project ' + (index + 1)" 
-              @load="imageLoaded(index)" 
-              class="w-[393px] h-[508px]"
-              v-show="image.loaded"
-            >
-          </div>
-          <div class="space-y-2">
-            <div v-for="(image, index) in images.slice(1, 3)" :key="index" class="relative">
-              <SkeletonLoader v-if="!image.loaded" :width="'418px'" :height="'250px'" />
-              <img 
-                v-lazy="image.src" 
-                :alt="'Project ' + (index + 2)" 
-                @load="imageLoaded(index)" 
-                class="w-[418px] h-[250px]"
-                v-show="image.loaded"
-              >
-            </div>
-          </div>
-          <div v-for="(image, index) in images.slice(3, 4)" :key="index" class="relative">
-            <SkeletonLoader v-if="!image.loaded" :width="'314px'" :height="'509px'" />
-            <img 
-              v-lazy="image.src" 
-              :alt="'Project ' + (index + 4)" 
-              @load="imageLoaded(index)" 
-              class="w-[314px] h-[509px]"
-              v-show="image.loaded"
-            >
-          </div>
-        </div>
-        <div class="flex space-x-4 mt-2">
-          <div v-for="(image, index) in images.slice(4)" :key="index" class="relative">
-            <SkeletonLoader v-if="!image.loaded" :width="'393px'" :height="'250px'" />
-            <img 
-              v-lazy="image.src" 
-              :alt="'Project ' + (index + 5)" 
-              @load="imageLoaded(index)" 
-              class="w-[393px] h-[250px]"
-              v-show="image.loaded"
-            >
-          </div>
-        </div>
+    <div class="w-full h-[788p] rounded mt-16 lg:mt-40 bg-foundationGreyLight py-12 px-8 md:px-[50px]">
+      <div class="flex space-x-5 justify-center items-center">
+        <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
+        <h1 class="font-extrabold text-[18px] md:text-[30px] lg:text-[32px]">OUR SERVICES</h1>
+        <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
       </div>
   
-      <!-- Mobile View -->
-      <div class="block md:hidden relative">
-        <div @click="prevImage" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
-          <img v-lazy="require('@/assets/chevron-left.png')" alt="Left Arrow" class="h-6">
-        </div>
-        <div @click="nextImage" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
-          <img v-lazy="require('@/assets/chevron-right.png')" alt="Right Arrow" class="h-6">
-        </div>
-  
-        <div class="flex overflow-hidden relative mt-8" style="width: 241px; height: 311px; margin: 0 auto;">
-          <div class="flex transition-transform duration-300" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
-            <div v-for="(image, index) in mobileImages" :key="index" class="relative">
-              <SkeletonLoader v-if="!image.loaded" :width="'241px'" :height="'311px'" />
-              <img 
-                v-lazy="image.src" 
-                :alt="'Project Image ' + index" 
-                @load="imageLoaded(index, true)" 
-                class="w-[241px] h-[311px] flex-shrink-0"
-                v-show="image.loaded"
-              >
-            </div>
-          </div>
-        </div>
-        
-        <div class="flex justify-center space-x-2 mt-4">
-          <span v-for="(image, index) in mobileImages" :key="index" @click="goToImage(index)" :class="{'bg-gray-800': index === currentIndex, 'bg-gray-300': index !== currentIndex}" class="w-2 h-2 rounded-full cursor-pointer"></span>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4">
+        <div
+          v-for="(service, index) in services"
+          :key="index"
+          ref="serviceCard"
+          class="justify-center items-center align-center w-295 h-[254px] rounded-[10px] mt-12 bg-0 space-y-2 flex flex-col border border-foundationGoldNormal"
+        >
+          <img :src="service.image" alt="Service Icon" class="h-8">
+          <router-link
+            :to="service.link"
+            class="font-extrabold text-[18px] text-center hover:text-customGold text-foundationGreyDarker"
+            >{{ service.title }}</router-link
+          >
+          <p class="text-[16px] w-[224px] text-center font-nunito text-foundationGreyDarkActive">
+            {{ service.description }}
+          </p>
         </div>
       </div>
-      <router-link to="/services">
-        <button class="w-[190px] h-[60px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mt-8">
-          View More
-        </button>
-      </router-link>
     </div>
   </template>
-  
-  <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import SkeletonLoader from '@/components/SkeletonLoader.vue'; // Import the Skeleton Loader
-  
-  gsap.registerPlugin(ScrollTrigger);
-  
-  export default {
-    name: 'AboutUsSection',
-    components: {
-      SkeletonLoader,
-    },
-    data() {
-      return {
-        currentIndex: 0,
-        images: [
-          { src: require('@/assets/Frame-48.png'), loaded: false },
-          { src: require('@/assets/Frame-45.png'), loaded: false },
-          { src: require('@/assets/Frame-50.png'), loaded: false },
-          { src: require('@/assets/Frame-44.png'), loaded: false },
-          { src: require('@/assets/Frame-51.png'), loaded: false },
-          { src: require('@/assets/Frame-52.png'), loaded: false },
-          { src: require('@/assets/Frame-53.png'), loaded: false },
-        ],
-        slideInterval: null,
-      };
-    },
-    mounted() {
-      this.startAutoSlide();
-      this.$nextTick(() => {
-        this.animateImages();
+
+
+<script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
+  name: 'AboutUsSection',
+  data() {
+    return {
+      services: [
+        {
+          image: require('@/assets/Plumbing.png'),
+          title: 'Residential and Commercial Plumbing',
+          link: '/services',
+          description: 'Top-quality plumbing services for homes and businesses. Dependable, efficient, and professional.',
+        },
+        {
+          image: require('@/assets/Water-Heater.png'),
+          title: 'Water heater repair & replacement',
+          link: '/services',
+          description: 'Expert repair and replacement of water heaters to keep your home warm and comfortable.',
+        },
+        {
+          image: require('@/assets/Tools.png'),
+          title: 'Repiping Services',
+          link: '/services',
+          description: 'Replace old pipes with durable, high-quality materials for better water flow and reliability.',
+        },
+        {
+          image: require('@/assets/Water-Tap.png'),
+          title: 'Faucet Repair & Replacement',
+          link: '/services',
+          description: 'Repair and replace faucets and fixtures for enhanced functionality and style in your home.',
+        },
+        {
+          image: require('@/assets/Gas-Burner.png'),
+          title: 'Gas Line Services',
+          link: '/services',
+          description: 'Comprehensive gas line installation, repair, and maintenance by certified professionals.',
+        },
+        {
+          image: require('@/assets/Heating.png'),
+          title: 'Hydronic Heating & Services',
+          link: '/services',
+          description: 'Installation, repair, and maintenance of energy-efficient hydronic heating systems for consistent warmth.',
+        },
+        {
+          image: require('@/assets/Pump.png'),
+          title: 'Pump Services',
+          link: '/services',
+          description: 'Professional installation, repair, and maintenance of sump pumps, well pumps, and more.',
+        },
+        {
+          image: require('@/assets/Water-Pipe.png'),
+          title: 'Sewer & Drain Pipe Repair & Replacement',
+          link: '/services',
+          description: 'Expert repair and replacement of sewer and drain pipes to prevent clogs and ensure smooth operation.',
+        },
+        
+        // Add more services as needed
+      ]
+    };
+  },
+  mounted() {
+    const firstRowCards = this.$refs.serviceCard.slice(0, 4); // Select the first 4 cards (first row)
+
+    gsap.from(firstRowCards, {
+      scale: 0.5,
+      opacity: 0,
+      duration: 1.2,
+      stagger: 0.1, // A little stagger for a nicer effect
+      scrollTrigger: {
+        trigger: firstRowCards[0], // Trigger animation when the first card in the row comes into view
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    // Animate remaining cards individually
+    this.$refs.serviceCard.slice(4).forEach((card) => {
+      gsap.from(card, {
+        scale: 0.5,
+        opacity: 0,
+        duration: 1.2,
+        scrollTrigger: {
+          trigger: card,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
       });
-    },
-    beforeUnmount() {
-      this.stopAutoSlide();
-    },
-    methods: {
-      imageLoaded(index) {
-        this.images[index].loaded = true;
-      },
-      prevImage() {
-        this.currentIndex = (this.currentIndex === 0) ? this.images.length - 1 : this.currentIndex - 1;
-      },
-      nextImage() {
-        this.currentIndex = (this.currentIndex === this.images.length - 1) ? 0 : this.currentIndex + 1;
-      },
-      goToImage(index) {
-        this.currentIndex = index;
-      },
-      startAutoSlide() {
-        this.slideInterval = setInterval(this.nextImage, 5000);
-      },
-      stopAutoSlide() {
-        clearInterval(this.slideInterval);
-      },
-      animateImages() {
-        const images = this.$refs.projectImages.querySelectorAll('img');
-        if (images) {
-          gsap.from(images, {
-            scale: 0,
-            duration: 1.2,
-            ease: "power2.out",
-            stagger: 0.2,
-            scrollTrigger: {
-              trigger: this.$refs.projectImages,
-              start: "top 80%",
-            }
-          });
-        }
-      }
-    },
-  };
-  </script>
-  
-  <style scoped>
-  /* Add any necessary styles here */
-  </style>
-  
+    });
+  },
+};
+</script>
+
+<style scoped>
+/* Add any necessary styles here */
+</style>
+

@@ -7,6 +7,7 @@ module.exports = defineConfig({
   chainWebpack: config => {
     config.plugin('html')
       .tap(args => {
+        args[0].favicon = 'public/favicon.ico';
         args[0].templateContent = ({ htmlWebpackPlugin }) => `
           <!DOCTYPE html>
           <html lang="">
