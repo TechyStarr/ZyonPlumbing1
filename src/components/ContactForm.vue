@@ -45,7 +45,7 @@
 <script>
 import emailjs from 'emailjs-com';
 
-emailjs.init('xsdh5Jq-WzNT2CDIm'); // Initialize EmailJS with your user ID
+emailjs.init('EsSWdxHedPRxQvbHe'); // Initialize EmailJS with your user ID
 
 export default {
   data() {
@@ -65,7 +65,7 @@ export default {
         message: this.message,
       };
 
-      emailjs.send('service_62eif99', 'template_d87p1zs', templateParams)
+      emailjs.send('service_5lm5vzb', 'template_bonqf9k', templateParams)
         .then(response => {
           console.log('SUCCESS!', response.status, response.text);
           alert('Message sent successfully!');
