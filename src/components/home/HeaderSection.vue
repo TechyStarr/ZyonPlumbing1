@@ -1,8 +1,15 @@
 <template>
-  <div class="relative md:mt-header-margin">
-    <SkeletonLoader v-if="!imageLoaded" :width="'100%'" :height="'692px'" :borderRadius="'0'" />
-    <img v-lazy="currentImage" alt="Header Image" class="w-full h-[692px] md:h-[843px] object-cover" @load="onImageLoad" v-show="imageLoaded">
-    <div ref="textContent" class="absolute top-48 md:top-40 left-4 md:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
+  <div class="header-container relative z-20 md:mt-header-margin">
+    <div class="image-container">
+      <img
+        v-for="(image, index) in images"
+        :key="index"
+        :src="image"
+        :class="['w-full h-[692px] md:h-[843px] object-cover', { 'fade-image': currentIndex === index }]"
+        alt="Header Image"
+      />
+    </div>
+    <div class="text-container absolute top-48 md:top-40 left-4 xl:left-6 px-6 md:px-20 py-16 md:py-32 space-y-4 text-white">
       <h1 class="text-[32px] md:text-[64px] w-full md:w-[720px] text-center md:text-left font-extrabold leading-tight">
         We Keep the Water Flowing and the Heat Glowing
       </h1>
@@ -21,61 +28,53 @@
 </template>
 
 <script>
-import SkeletonLoader from '@/components/SkeletonLoader.vue'; // Adjust the path if necessary
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default {
-  components: {
-    SkeletonLoader
-  },
   data() {
     return {
       images: [
         require('@/assets/header-img.png'),
         require('@/assets/header-img2.png')
       ],
-      currentIndex: 0,
-      imageLoaded: false
+      currentIndex: 0
     };
-  },
-  computed: {
-    currentImage() {
-      return this.images[this.currentIndex];
-    }
   },
   mounted() {
     this.startImageSlideshow();
-    this.animateTextContent();
   },
   methods: {
     startImageSlideshow() {
       setInterval(() => {
-        this.imageLoaded = false;
         this.currentIndex = (this.currentIndex + 1) % this.images.length;
       }, 5000);
-    },
-    animateTextContent() {
-      gsap.from(this.$refs.textContent, {
-        x: -200,
-        opacity: 0,
-        duration: 1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: this.$refs.textContent,
-          start: "top 80%",
-        }
-      });
-    },
-    onImageLoad() {
-      this.imageLoaded = true;
     }
   }
 };
 </script>
 
 <style scoped>
-/* Add any necessary styles here */
+.header-container {
+  z-index: 20; /* Higher than AboutUsSection */
+  position: relative; /* Ensure z-index takes effect */
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.image-container img.fade-image {
+  opacity: 1;
+}
+
+.text-container {
+  position: relative;
+  z-index: 30; /* Ensure text is above images */
+}
 </style>

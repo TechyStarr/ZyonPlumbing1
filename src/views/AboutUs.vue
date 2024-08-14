@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="overflow-hidden">
     <AboutUsComponent />
   </div>
 </template>

@@ -5,7 +5,7 @@
       <h1 class="font-extrabold text-[18px] md:text-[32px] text-foundationGreyDarker">GET IN TOUCH</h1>
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark mr-4">
     </div>
-    <div class="flex flex-col md:flex-row justify-between mx-4 md:mx-20 space-y-12">
+    <div class="flex flex-col lg:flex-row justify-between mx-4 md:mx-20 space-y-12">
       <div class="space-y-8">
         <p class="text-[16px] md:text-[20px] mt-10 w-[326px] md:w-[521px] text-center md:text-left text-foundationGreyDarker">If you have any questions or comments about our services, contact us using the form and we will surely get back to you.</p>
 
@@ -41,12 +41,12 @@
       </div>
       <ContactForm />
     </div>
-    <div class="relative hidden md:block md:-left-12">
+    <div class="relative hidden lg:block lg:-left-12">
       <div class="absolute w-[3] h-[150px] -top-16">
         <img v-lazy="require('@/assets/tools-icon.png')" alt="Tools Icon" class="w-full h-full rounded-[10px] object-cover">
       </div>
     </div>
-    <div class="relative md:hidden" style="height: 20px;">
+    <div class="relative lg:hidden" style="height: 20px;">
       <div class="absolute right-[-260px] -top-12 w-[460px]">
         <img v-lazy="require('@/assets/tool-2.png')" alt="Tool Image" class="w-full h-full object-cover rounded-[10px]">
       </div>

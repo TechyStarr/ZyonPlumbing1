@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="p-4 md:p-[70px]">
-      <div class="md:flex md:space-x-10">
+      <div class="lg:flex md:space-x-10">
         <div class="md:border border-foundationGreyLightActive rounded-[10px] overflow-hidden">
           <img v-lazy="headerImage" alt="Article Image" class="w-full h-[168px] md:h-[413px] object-cover">
           <div class="p-4 md:p-12 space-y-3 md:space-y-8">
@@ -167,7 +167,7 @@
           <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
           <h1 class="font-extrabold text-[18px] md:text-[32px]">LEAVE A REPLY</h1>
         </div>
-        <div class="w-full md:w-[828px] h-auto p-4 md:p-12 space-y-8 border border-foundationGreyLightActive rounded-[10px]">
+        <div class="w-full lg:w-[828px] h-auto p-4 xl:p-12 space-y-8 border border-foundationGreyLightActive rounded-[10px]">
           <p class="text-left mb-9 font-nunito text-[14px] md:text-[16px]">
             Your email address will not be published. Required fields are marked *
           </p>

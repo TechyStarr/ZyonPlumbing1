@@ -1,12 +1,12 @@
-<template>
-  <div ref="contactSection" class="w-full h-auto rounded mt-1 my-36 md:my-0 py-10 md:py-24 px-4 md:px-12">
+<template class="overflow-hidden">
+  <div ref="contactSection" class="w-full h-auto rounded mt-1 my-3 md:my-0 py-10 md:py-24 px-4 md:px-12">
     <div class="flex space-x-5 justify-center items-center">
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
       <h1 class="font-extrabold text-[18px] md:text-[32px]">CONTACT US</h1>
       <hr class="w-[50px] border-t-[3px] border-lineStrokeDark">
     </div>
 
-    <div class="flex flex-col md:flex-row justify-between mx-4 md:mx-20 space-y-12">
+    <div class="flex flex-col lg:flex-row justify-between mx-4 md:mx-20 space-y-12">
       <div ref="contactText" class="space-y-8">
         <p class="text-[16px] md:text-[20px] mt-10 w-[326px] md:w-[521px] text-center md:text-left text-foundationGreyDarker">
           If you have any questions or comments about our services, contact us using the form and we will surely get back to you.

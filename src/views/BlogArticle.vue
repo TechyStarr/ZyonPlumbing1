@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-hidden">
     <BlogArticleComponent :article="article" v-if="article" />
     <div class="container mx-auto py-10" v-else>
       <p>Loading...</p>

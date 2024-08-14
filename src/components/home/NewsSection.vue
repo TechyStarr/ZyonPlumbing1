@@ -8,7 +8,7 @@
     <div class="flex justify-center ">
       <div class="max-w-screen-lg max-w-screen-sm w-full flex justify-center gap-4">
         <div v-for="article in displayedArticles" :key="article.id" class="mt-6 md:mt-12 space-y-2 text-left article-container">
-          <div class="relative w-[335px] md:w-[387px] h-[289px]">
+          <div class="relative md:w-[265px] lg:w-[335px] xl:w-[387px] md:h-[268px] xl:h-[289px]">
             <img v-lazy="require(`@/assets/${article.image}`)" alt="Article image" class="w-full h-full rounded object-cover">
             <p class="absolute top-2 left-2 bg-foundationGoldNormal text-white font-bold py-2 px-4 rounded-full">
               {{ article.category }}

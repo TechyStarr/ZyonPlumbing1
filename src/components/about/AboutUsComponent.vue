@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="overflow-hidden">
     <about-header-section />
     <about-us-section />
     <mission-section />

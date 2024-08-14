@@ -1,15 +1,15 @@
 <template>
   <div>
-    <div v-for="(section, index) in sections" :key="index" ref="sections" class="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-[70px] px-4 md:px-32">
-      <h1 class="text-[64px] text-[#E9E0CC] mt- md:mt-0 md:order-1 font-extrabold leading-tight text-center w-full md:w-auto">
+    <div v-for="(section, index) in sections" :key="index" ref="sections" class="flex flex-col xl:flex-row justify-between items-center mb-8 xl:mb-[70px] px-4 xl:px-32">
+      <h1 class="text-[64px] text-[#E9E0CC] mt- xl:mt-0 xl:order-1 font-extrabold leading-tight text-center w-full xl:w-auto">
         {{ index + 1 < 10 ? '0' + (index + 1) : index + 1 }}
       </h1>
-      <div class="space-y-2 flex flex-col items-center md:items-start md:order-2 w-full md:w-auto">
-        <img v-lazy="section.icon" alt="Check square" class="mx-auto md:ml-32 h-8">
-        <p class="font-extrabold text-[18px] text-center md:text-left">{{ section.title }}</p>
-        <p class="text-[16px] w-full md:w-[489px] text-center md:text-left font-nunito">{{ section.description }}</p>
+      <div class="space-y-2 flex flex-col items-center xl:items-start xl:order-2 w-full xl:w-auto">
+        <img v-lazy="section.icon" alt="Check square" class="mx-auto xl:ml-32 h-8">
+        <p class="font-extrabold text-[18px] text-center xl:text-left">{{ section.title }}</p>
+        <p class="text-[16px] w-full md:w-[489px] text-center xl:text-left font-nunito">{{ section.description }}</p>
       </div>
-      <img v-lazy="section.image" alt="Check square" class="w-full md:w-[423px] h-[265px] rounded md:order-3 mt-4 md:mt-0">
+      <img v-lazy="section.image" alt="Check square" class="w-full xl:w-[423px] h-[265px] rounded xl:order-3 mt-4 xl:mt-0">
     </div>
     <button class="w-[190px] h-[60px] mb-[70px] bg-[#181818] hover:bg-customGold text-white font-bold rounded-full mx-auto block">
       Contact Us

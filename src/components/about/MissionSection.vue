@@ -5,7 +5,7 @@
         <hr class="w-[50px] border-t-[3px] border-gray-400">
         <h1 class="font-extrabold text-[18px] md:text-[32px]">MISSION STATEMENT</h1>
       </div>
-      <p class="font-nunito text-left w-full md:w-[1227px]">
+      <p class="font-nunito text-left w-full xl:w-[1227px]">
         At Zyon Plumbing & Heating, our mission is simple: to provide top-quality plumbing and heating services with a personal touch. 
         We strive to ensure every home and business in our community stays comfortable, safe, and efficient. Through our commitment to excellence, integrity, and customer satisfaction, we aim to build lasting relationships and make a positive impact on the lives of those we serve. Your comfort is our priority, and we’re here to help, one pipe and pump at a time.
       </p>
@@ -16,7 +16,7 @@
         <hr class="w-[50px] border-t-[3px] border-gray-400">
         <h1 class="font-extrabold text-[18px] md:text-[32px]">WHY CHOOSE US</h1>
       </div>
-      <div class="font-nunito text-left w-full md:w-[1227px]">
+      <div class="font-nunito text-left w-full xl:w-[1227px]">
         <ul class="list-disc pl-5 space-y-2">
           <li>
             <strong>Building Trust:</strong> We know plumbing problems can be stressful. That's why clear communication and honest advice are at the core of everything we do. We'll explain the issue in plain English and discuss all your options before we start any work.

@@ -9,7 +9,9 @@
     "compress-images": "imagemin src/assets/* --out-dir=src/assets"
   },
   "dependencies": {
+    "blurhash": "^2.0.5",
     "core-js": "^3.8.3",
+    "emailjs-com": "^3.2.0",
     "gsap": "^3.12.5",
     "swiper": "^11.1.5",
     "vue": "^3.2.13",

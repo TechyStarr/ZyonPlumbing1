@@ -6,7 +6,7 @@
         </div>
   
         <!-- Slider for desktop view -->
-        <div class="relative mt-8 hidden md:block">
+        <div class="relative mt-8 hidden lg:block">
             <div @click="prevTestimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
                 <img v-lazy="require('@/assets/chevron-left.png')" alt="Left Arrow" class="h-8">
             </div>
@@ -45,11 +45,11 @@
         </div>
   
         <!-- Slider for mobile view -->
-        <div class="relative mt-8 block md:hidden">
-            <div @click="prevTestimonialMobile" class="absolute -left-8 md:left-0 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
+        <div class="relative mt-8 block lg:hidden">
+            <div @click="prevTestimonialMobile" class="absolute -left-8 md:left-16 lg:left-0 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
                 <img v-lazy="require('@/assets/chevron-left.png')" alt="Left Arrow" class="h-8">
             </div>
-            <div @click="nextTestimonialMobile" class="absolute -right-8 md:right-0 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
+            <div @click="nextTestimonialMobile" class="absolute -right-8 md:right-16 lg:right-0 top-1/2 transform -translate-y-1/2 bg-gra bg-opacity-50 text-white p-2 rounded-full z-10 cursor-pointer">
                 <img v-lazy="require('@/assets/chevron-right.png')" alt="Right Arrow" class="h-8">
             </div>
   
@@ -60,7 +60,7 @@
                             <img v-lazy="testimonial.image1" alt="Avatar" class="w-[91px] h-[87px]">
                             <h1 class="font-extrabold text-[18px] text-center text-foundationGreyDarker">{{ testimonial.name }}</h1>
                             <img v-lazy="testimonial.image2" alt="Image" class="w-[136px]">
-                            <p class="text-[16px] w-[285px] text-center font-nunito text-foundationGreyDarker">{{ testimonial.text }}</p>
+                            <p class="text-[16px] w-[285px] md:w-[325px] text-center font-nunito text-foundationGreyDarker">{{ testimonial.text }}</p>
                         </div>
                     </div>
                 </div>
